@@ -1,10 +1,12 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Nav() {
   const [visible, setVisible] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => setVisible(window.scrollY > 80)
@@ -14,7 +16,12 @@ export default function Nav() {
 
   const scrollTo = (id) => {
     setMobileOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    if (pathname === '/') {
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.location.href = `/#${id}`
+    }
   }
 
   return (
@@ -38,11 +45,17 @@ export default function Nav() {
             >
               Services
             </button>
-            <button
-              onClick={() => scrollTo('calculator')}
+            <Link
+              href="/calculator"
               className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
             >
               Calculator
+            </Link>
+            <button
+              onClick={() => scrollTo('portfolio')}
+              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+            >
+              Results
             </button>
             <Link
               href="/blog"
@@ -51,13 +64,7 @@ export default function Nav() {
               Blog
             </Link>
             <button
-              onClick={() => scrollTo('demo')}
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-            >
-              Free Demo
-            </button>
-            <button
-              onClick={() => scrollTo('demo')}
+              onClick={() => scrollTo('contact')}
               className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm"
             >
               Get Free Demo
@@ -69,54 +76,21 @@ export default function Nav() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                mobileOpen ? 'rotate-45 translate-y-2' : ''
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                mobileOpen ? 'opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                mobileOpen ? '-rotate-45 -translate-y-2' : ''
-              }`}
-            />
+            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
         </div>
 
         {mobileOpen && (
           <div className="md:hidden bg-[#0a0f1e] border-t border-[#1e2a4a] py-6">
             <div className="flex flex-col gap-5 px-2">
+              <button onClick={() => scrollTo('services')} className="text-gray-300 hover:text-white text-left text-base">Services</button>
+              <Link href="/calculator" className="text-gray-300 hover:text-white text-base" onClick={() => setMobileOpen(false)}>Calculator</Link>
+              <button onClick={() => scrollTo('portfolio')} className="text-gray-300 hover:text-white text-left text-base">Results</button>
+              <Link href="/blog" className="text-gray-300 hover:text-white text-base" onClick={() => setMobileOpen(false)}>Blog</Link>
               <button
-                onClick={() => scrollTo('services')}
-                className="text-gray-300 hover:text-white text-left text-base"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollTo('calculator')}
-                className="text-gray-300 hover:text-white text-left text-base"
-              >
-                Calculator
-              </button>
-              <Link
-                href="/blog"
-                className="text-gray-300 hover:text-white text-base"
-                onClick={() => setMobileOpen(false)}
-              >
-                Blog
-              </Link>
-              <button
-                onClick={() => scrollTo('demo')}
-                className="text-gray-300 hover:text-white text-left text-base"
-              >
-                Free Demo
-              </button>
-              <button
-                onClick={() => scrollTo('demo')}
+                onClick={() => scrollTo('contact')}
                 className="w-full py-3 bg-[#3b82f6] text-white font-semibold rounded-lg text-base"
               >
                 Get Free Demo

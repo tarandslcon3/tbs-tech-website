@@ -2,15 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://leadforge-website-inky.vercel.app/</loc>
-    <lastmod>2025-06-23</lastmod>
+    <lastmod>2025-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://leadforge-website-inky.vercel.app/blog</loc>
-    <lastmod>2025-06-23</lastmod>
+    <lastmod>2025-07-05</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leadforge-website-inky.vercel.app/calculator</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leadforge-website-inky.vercel.app/privacy</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://leadforge-website-inky.vercel.app/terms</loc>
+    <lastmod>2025-07-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://leadforge-website-inky.vercel.app/blog/how-much-does-a-trades-website-cost</loc>
@@ -27,6 +45,30 @@
   <url>
     <loc>https://leadforge-website-inky.vercel.app/blog/ai-automation-for-plumbers</loc>
     <lastmod>2025-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leadforge-website-inky.vercel.app/blog/how-to-spot-phishing-emails-targeting-trades</loc>
+    <lastmod>2025-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leadforge-website-inky.vercel.app/blog/online-scams-targeting-contractors</loc>
+    <lastmod>2025-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leadforge-website-inky.vercel.app/blog/is-your-website-costing-you-customers</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leadforge-website-inky.vercel.app/blog/ai-automation-plain-english</loc>
+    <lastmod>2025-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

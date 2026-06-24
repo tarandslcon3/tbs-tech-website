@@ -1,82 +1,109 @@
 'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
-  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  const pathname = usePathname()
+
+  const scrollTo = (id) => {
+    if (pathname === '/') {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.location.href = `/#${id}`
+    }
+  }
 
   return (
     <footer className="bg-[#060b18] border-t border-[#1e2a4a] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-2">
+          {/* Brand */}
+          <div>
             <div className="text-2xl font-black text-white mb-4">
               Lead<span className="text-[#3b82f6]">Forge</span>
             </div>
-            <p className="text-gray-400 max-w-sm leading-relaxed">
-              AI Automation and Websites for Trades Businesses. Serving USA and Canada. Based in
-              Brantford, Ontario.
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              AI-powered websites and automation for HVAC, plumbing, electrical and roofing companies across USA and Canada.
             </p>
-            <div className="flex gap-4 mt-6">
-              <span className="px-3 py-1 bg-[#1e2a4a] rounded-full text-xs text-gray-400">HVAC</span>
-              <span className="px-3 py-1 bg-[#1e2a4a] rounded-full text-xs text-gray-400">Plumbing</span>
-              <span className="px-3 py-1 bg-[#1e2a4a] rounded-full text-xs text-gray-400">Electrical</span>
-              <span className="px-3 py-1 bg-[#1e2a4a] rounded-full text-xs text-gray-400">Roofing</span>
+            <div className="flex flex-wrap gap-2">
+              {['HVAC', 'Plumbing', 'Electrical', 'Roofing'].map((t) => (
+                <span key={t} className="px-2 py-1 bg-[#1e2a4a] rounded text-xs text-gray-400">{t}</span>
+              ))}
             </div>
           </div>
 
+          {/* Services */}
+          <div>
+            <h4 className="text-white font-semibold mb-5">Services</h4>
+            <ul className="space-y-3">
+              {[
+                'AI-Powered Websites',
+                'Lead Capture Systems',
+                'Automation Workflows',
+                'AI Chatbots',
+                'CRM Integration',
+                'Review Generation',
+              ].map((s) => (
+                <li key={s} className="text-gray-400 text-sm">{s}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
           <div>
             <h4 className="text-white font-semibold mb-5">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <button
-                  onClick={() => scrollTo('services')}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Services
-                </button>
+                <button onClick={() => scrollTo('services')} className="text-gray-400 hover:text-white transition-colors text-sm">Services</button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('calculator')}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  ROI Calculator
-                </button>
+                <Link href="/calculator" className="text-gray-400 hover:text-white transition-colors text-sm">Business Leak Calculator</Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Blog
-                </Link>
+                <button onClick={() => scrollTo('portfolio')} className="text-gray-400 hover:text-white transition-colors text-sm">Results</button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('demo')}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Free Demo
-                </button>
+                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors text-sm">Blog</Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</Link>
               </li>
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-5">Our Services</h4>
+            <h4 className="text-white font-semibold mb-5">Contact</h4>
             <ul className="space-y-3">
-              <li className="text-gray-400 text-sm">AI-Powered Websites</li>
-              <li className="text-gray-400 text-sm">Automation Workflows</li>
-              <li className="text-gray-400 text-sm">SaaS & Custom Tools</li>
-              <li className="text-gray-400 text-sm">Lead Generation Systems</li>
-              <li className="text-gray-400 text-sm">CRM Integration</li>
+              <li>
+                <a href="mailto:tbstechservices@gmail.com" className="text-gray-400 hover:text-white transition-colors text-sm break-all">
+                  tbstechservices@gmail.com
+                </a>
+              </li>
+              <li className="text-gray-400 text-sm">USA &amp; Canada</li>
+              <li className="pt-2">
+                <button
+                  onClick={() => scrollTo('contact')}
+                  className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm"
+                >
+                  Get Free Demo
+                </button>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-[#1e2a4a] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            © 2025 LeadForge — AI Automation and Websites for Trades Businesses. Serving USA and
-            Canada. Based in Brantford, Ontario.
+            © 2025 LeadForge — AI Automation and Websites for Trades Businesses. Serving USA and Canada.
           </p>
-          <p className="text-gray-600 text-xs">Built with AI. Powered by results.</p>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">Terms</Link>
+          </div>
         </div>
       </div>
     </footer>

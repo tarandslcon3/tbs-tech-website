@@ -59,6 +59,7 @@ input[type='range']::-moz-range-thumb {
   border: 2px solid #1e2a4a;
 }
 
+/* Prose styles for blog content */
 .prose-content h2 {
   font-size: 1.5rem;
   font-weight: 800;
@@ -88,4 +89,99 @@ input[type='range']::-moz-range-thumb {
 .prose-content strong {
   color: #e2e8f0;
   font-weight: 600;
+}
+
+/* Animated gradient text */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #8b5cf6, #3b82f6);
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Living background orbs */
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, -80px) scale(1.1); }
+  66% { transform: translate(-40px, 40px) scale(0.95); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-80px, 60px) scale(1.05); }
+  66% { transform: translate(50px, -50px) scale(1.1); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 80px) scale(0.9); }
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(59, 130, 246, 0.12);
+  top: -100px;
+  left: -100px;
+  animation: orbFloat1 18s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 600px;
+  height: 600px;
+  background: rgba(6, 182, 212, 0.08);
+  bottom: 100px;
+  right: -150px;
+  animation: orbFloat2 22s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 400px;
+  height: 400px;
+  background: rgba(139, 92, 246, 0.1);
+  top: 50%;
+  left: 40%;
+  animation: orbFloat3 16s ease-in-out infinite;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Marquee trust strip */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }

@@ -107,7 +107,7 @@ export default function Services() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 bg-[#1e2a4a] rounded-full px-4 py-2 text-gray-300 text-sm font-medium mb-6">
-            Serving HVAC, Plumbing, Electrical and Roofing across USA and Canada
+            Serving small businesses, SaaS, e-commerce, and any industry across USA and Canada
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Everything Your Trades Business Needs to{' '}

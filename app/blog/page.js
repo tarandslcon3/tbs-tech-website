@@ -4,9 +4,9 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Blog — AI Websites & Automation Tips for Trades Businesses | LeadForge',
+  title: 'Blog — AI Websites & Automation Tips for Any Business | LeadForge',
   description:
-    'Practical guides for HVAC, plumbing, electrical and roofing businesses on websites, AI automation, and getting more leads.',
+    'Practical guides on websites, AI automation, and getting more leads for any business across USA and Canada.',
 }
 
 export default function BlogPage() {
@@ -17,14 +17,13 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-[#3b82f6]/10 border border-[#3b82f6]/20 rounded-full px-4 py-2 text-[#3b82f6] text-sm font-medium mb-6">
-              Resources for Trades Businesses
+              Resources for Growing Businesses
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
               The LeadForge Blog
             </h1>
             <p className="text-gray-400 text-lg max-w-xl mx-auto">
-              Practical guides on AI, websites, and automation for HVAC, plumbing, electrical and
-              roofing companies.
+              Practical guides on AI, websites, and automation for any business across USA and Canada.
             </p>
           </div>
 

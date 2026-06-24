@@ -5,7 +5,7 @@ import * as THREE from 'three'
 
 const TRUST_ITEMS = [
   '⚡ AI-Powered Lead Capture',
-  '🏆 Trusted by Trades Businesses',
+  '🏆 Trusted by Growing Businesses',
   '📱 Mobile-First Design',
   '🔔 Instant SMS Alerts',
   '🤖 24/7 AI Chatbot',
@@ -31,23 +31,19 @@ export default function Hero() {
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000)
     camera.position.z = 3.5
 
-    // Point light that orbits
     const pointLight = new THREE.PointLight(0x3b82f6, 2, 8)
     scene.add(pointLight)
 
-    // Main icosahedron
     const icoGeo = new THREE.IcosahedronGeometry(1.2, 1)
     const icoMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.7 })
     const icosahedron = new THREE.Mesh(icoGeo, icoMat)
     scene.add(icosahedron)
 
-    // Inner icosahedron
     const innerGeo = new THREE.IcosahedronGeometry(0.8, 0)
     const innerMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, wireframe: true, transparent: true, opacity: 0.4 })
     const innerIco = new THREE.Mesh(innerGeo, innerMat)
     scene.add(innerIco)
 
-    // 150 particles with sine pulse
     const particleCount = 150
     const positions = new Float32Array(particleCount * 3)
     const velocities = new Float32Array(particleCount)
@@ -71,9 +67,7 @@ export default function Hero() {
     }
     window.addEventListener('mousemove', handleMouseMove)
 
-    const handleScroll = () => {
-      scrollRef.current = window.scrollY
-    }
+    const handleScroll = () => { scrollRef.current = window.scrollY }
     window.addEventListener('scroll', handleScroll)
 
     const handleResize = () => {
@@ -85,8 +79,6 @@ export default function Hero() {
 
     const clock = new THREE.Clock()
     let animId
-
-    // Store original vertex positions for scroll displacement
     const origPositions = new Float32Array(icoGeo.attributes.position.array)
 
     const animate = () => {
@@ -94,53 +86,38 @@ export default function Hero() {
       const t = clock.getElapsedTime()
       const scrollFactor = scrollRef.current * 0.001
 
-      // Rotate icosahedrons on all 3 axes
       icosahedron.rotation.x = t * 0.2 + mouseRef.current.y * 0.12
       icosahedron.rotation.y = t * 0.35 + mouseRef.current.x * 0.12
       icosahedron.rotation.z = t * 0.1
-
       innerIco.rotation.x = -t * 0.3
       innerIco.rotation.y = -t * 0.25
       innerIco.rotation.z = t * 0.15
 
-      // Scroll vertex displacement on main icosahedron
       const verts = icoGeo.attributes.position.array
       for (let i = 0; i < verts.length; i += 3) {
-        const ox = origPositions[i]
-        const oy = origPositions[i + 1]
-        const oz = origPositions[i + 2]
+        const ox = origPositions[i], oy = origPositions[i + 1], oz = origPositions[i + 2]
         const noise = Math.sin(t * 2 + ox * 3 + oy * 2) * scrollFactor * 0.3
-        verts[i] = ox + noise
-        verts[i + 1] = oy + noise
-        verts[i + 2] = oz + noise
+        verts[i] = ox + noise; verts[i + 1] = oy + noise; verts[i + 2] = oz + noise
       }
       icoGeo.attributes.position.needsUpdate = true
 
-      // Orbit point light
       pointLight.position.x = Math.cos(t * 0.8) * 3
       pointLight.position.y = Math.sin(t * 0.6) * 2
       pointLight.position.z = Math.sin(t * 0.8) * 2
 
-      // Camera parallax
       camera.position.x += (mouseRef.current.x * 0.2 - camera.position.x) * 0.05
       camera.position.y += (-mouseRef.current.y * 0.1 - camera.position.y) * 0.05
       camera.lookAt(scene.position)
 
-      // Particle sine pulse + drift
       const pos = particles.geometry.attributes.position.array
       for (let i = 0; i < particleCount; i++) {
         pos[i * 3 + 1] += velocities[i]
         pos[i * 3] += Math.sin(t + phases[i]) * 0.002
-        if (pos[i * 3 + 1] > 7) {
-          pos[i * 3 + 1] = -7
-          pos[i * 3] = (Math.random() - 0.5) * 14
-        }
+        if (pos[i * 3 + 1] > 7) { pos[i * 3 + 1] = -7; pos[i * 3] = (Math.random() - 0.5) * 14 }
       }
       particles.geometry.attributes.position.needsUpdate = true
-
       renderer.render(scene, camera)
     }
-
     animate()
 
     return () => {
@@ -149,17 +126,13 @@ export default function Hero() {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
       renderer.dispose()
-      icoGeo.dispose()
-      icoMat.dispose()
-      innerGeo.dispose()
-      innerMat.dispose()
-      particleGeo.dispose()
-      particleMat.dispose()
+      icoGeo.dispose(); icoMat.dispose()
+      innerGeo.dispose(); innerMat.dispose()
+      particleGeo.dispose(); particleMat.dispose()
     }
   }, [])
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-
   const trustItems = [...TRUST_ITEMS, ...TRUST_ITEMS]
 
   return (
@@ -175,7 +148,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 bg-[#3b82f6]/10 border border-[#3b82f6]/30 rounded-full px-4 py-2 text-[#3b82f6] text-sm font-medium mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
-          AI Lead Generation for Trades Businesses
+          AI Websites & Automation for Any Business
         </motion.div>
 
         <motion.h1
@@ -194,8 +167,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          We build AI-powered websites and automation for HVAC, plumbing, electrical and roofing
-          companies across USA and Canada. Get a free demo in 24 hours.
+          We build AI-powered websites, automation and custom tools for any business across USA and Canada. Get a free demo in 24 hours.
         </motion.p>
 
         <motion.div
@@ -219,7 +191,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Trust strip marquee */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

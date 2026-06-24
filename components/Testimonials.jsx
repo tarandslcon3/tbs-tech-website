@@ -50,7 +50,7 @@ export default function Testimonials() {
             Client Stories
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            What Trades Owners{' '}
+            What Our Clients{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#06b6d4]">
               Are Saying
             </span>

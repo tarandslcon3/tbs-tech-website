@@ -1,8 +1,28 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function ContactForm() {
   const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    const container = document.getElementById('jotform-container')
+    if (!container) return
+
+    const script = document.createElement('script')
+    script.src = 'https://form.jotform.com/jsform/261737577809069'
+    script.type = 'text/javascript'
+    script.async = true
+    script.onload = () => setLoaded(true)
+    container.appendChild(script)
+
+    return () => {
+      try {
+        if (container.contains(script)) container.removeChild(script)
+        const injected = document.getElementById('JotFormIFrame-261737577809069')
+        if (injected) injected.remove()
+      } catch (_) {}
+    }
+  }, [])
 
   return (
     <section id="contact" className="py-24 px-4 bg-[#060b18]">
@@ -22,30 +42,43 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <div className="glass-card rounded-2xl overflow-hidden relative">
+        <div className="glass-card rounded-2xl overflow-hidden relative" style={{ minHeight: 600 }}>
           {!loaded && (
-            <div className="absolute inset-0 flex items-center justify-center bg-[#0a0f1e]/80 z-10">
-              <div className="text-center">
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#0a0f1e',
+                zIndex: 10,
+              }}
+            >
+              <div style={{ textAlign: 'center' }}>
                 <div
-                  className="w-10 h-10 border-2 border-[#3b82f6] border-t-transparent rounded-full mx-auto mb-3"
-                  style={{ animation: 'spin 1s linear infinite' }}
+                  style={{
+                    width: 40,
+                    height: 40,
+                    border: '2px solid #3b82f6',
+                    borderTopColor: 'transparent',
+                    borderRadius: '50%',
+                    margin: '0 auto 12px',
+                    animation: 'jfspin 1s linear infinite',
+                  }}
                 />
-                <p className="text-gray-400 text-sm">Loading form...</p>
+                <p style={{ color: '#6b7280', fontSize: 14 }}>Loading form...</p>
               </div>
-              <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+              <style>{`@keyframes jfspin { to { transform: rotate(360deg); } }`}</style>
             </div>
           )}
-          <iframe
-            src="https://form.jotform.com/261737577809069"
-            title="LeadForge Contact Form"
-            onLoad={() => setLoaded(true)}
+          <div
+            id="jotform-container"
             style={{
               width: '100%',
               minHeight: 600,
-              border: 'none',
-              display: 'block',
+              background: 'transparent',
             }}
-            allowFullScreen
           />
         </div>
       </div>

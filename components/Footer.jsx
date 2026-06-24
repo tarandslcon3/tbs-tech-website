@@ -23,10 +23,10 @@ export default function Footer() {
               Lead<span className="text-[#3b82f6]">Forge</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              AI-powered websites and automation for HVAC, plumbing, electrical and roofing companies across USA and Canada.
+              Digital agency building websites, AI automation and custom tools for any business across USA and Canada.
             </p>
             <div className="flex flex-wrap gap-2">
-              {['HVAC', 'Plumbing', 'Electrical', 'Roofing'].map((t) => (
+              {['Small Business', 'SaaS', 'E-Commerce', 'Finance', 'Real Estate', 'Any Industry'].map((t) => (
                 <span key={t} className="px-2 py-1 bg-[#1e2a4a] rounded text-xs text-gray-400">{t}</span>
               ))}
             </div>
@@ -98,7 +98,7 @@ export default function Footer() {
 
         <div className="border-t border-[#1e2a4a] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            © 2025 LeadForge — AI Automation and Websites for Trades Businesses. Serving USA and Canada.
+            © 2025 LeadForge — AI Automation and Websites for Any Business. Serving USA and Canada.
           </p>
           <div className="flex gap-4">
             <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">Privacy</Link>

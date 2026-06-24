@@ -6,14 +6,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   metadataBase: new URL('https://leadforge-website-inky.vercel.app'),
-  title: 'AI Websites & Automation for Trades Businesses | LeadForge',
+  title: 'AI Websites & Automation for Any Business | LeadForge',
   description:
-    'LeadForge builds AI-powered websites and automation for HVAC, plumbing, electrical and roofing companies across USA and Canada. Get a free consultation today.',
-  keywords: 'AI websites trades, HVAC website, plumbing website, electrical contractor website, roofing website, lead generation trades',
+    'LeadForge builds AI-powered websites, automation and custom tools for any business across USA and Canada. Get a free consultation today.',
+  keywords: 'AI websites, business automation, lead generation, AI chatbot, web design agency, digital marketing USA Canada',
   openGraph: {
-    title: 'AI Websites & Automation for Trades Businesses | LeadForge',
+    title: 'AI Websites & Automation for Any Business | LeadForge',
     description:
-      'LeadForge builds AI-powered websites and automation for HVAC, plumbing, electrical and roofing companies across USA and Canada.',
+      'LeadForge builds AI-powered websites, automation and custom tools for any business across USA and Canada.',
     url: 'https://leadforge-website-inky.vercel.app',
     siteName: 'LeadForge',
     type: 'website',
@@ -21,9 +21,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Websites & Automation for Trades Businesses | LeadForge',
+    title: 'AI Websites & Automation for Any Business | LeadForge',
     description:
-      'AI-powered websites and automation for HVAC, plumbing, electrical and roofing companies.',
+      'AI-powered websites, automation and custom tools for any business across USA and Canada.',
   },
   alternates: {
     canonical: 'https://leadforge-website-inky.vercel.app',
@@ -34,9 +34,9 @@ const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'LeadForge',
-  description: 'AI-powered websites and automation for trades businesses',
+  description: 'Digital agency building AI-powered websites, automation and custom tools for any business',
   areaServed: ['United States', 'Canada'],
-  serviceType: ['Web Design', 'AI Automation', 'Lead Generation', 'Digital Marketing'],
+  serviceType: ['Web Design', 'AI Automation', 'Lead Generation', 'Digital Marketing', 'Business Automation'],
   url: 'https://leadforge-website-inky.vercel.app',
   email: 'tbstechservices@gmail.com',
   priceRange: 'Contact for details',
@@ -63,10 +63,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Do you build websites for HVAC companies?',
+      name: 'What kinds of businesses do you build websites for?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We specialize in AI-powered websites for HVAC companies across USA and Canada. Every site includes lead capture forms, instant SMS alerts, and automation workflows.',
+        text: 'We build AI-powered websites for any business across USA and Canada — small businesses, SaaS companies, e-commerce, finance, real estate, and more. Every site includes lead capture, instant SMS alerts, and automation workflows.',
       },
     },
     {
@@ -74,7 +74,7 @@ const faqSchema = {
       name: 'Do you serve clients in the USA?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We serve trades businesses across the entire United States and Canada, including HVAC, plumbing, electrical, and roofing companies.',
+        text: 'Yes. We serve businesses across the entire United States and Canada, in any industry.',
       },
     },
     {
@@ -103,10 +103,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What trades do you specialize in?',
+      name: 'What industries do you work with?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We specialize in HVAC, plumbing, electrical, and roofing businesses. Our sites are built from the ground up for trades companies.',
+        text: 'We work with any business — small businesses, SaaS companies, e-commerce stores, real estate, finance, and more. Our sites are built to generate leads and grow any type of business.',
       },
     },
     {

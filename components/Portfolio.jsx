@@ -96,13 +96,13 @@ export default function Portfolio() {
             Real Results
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Trades Businesses{' '}
+            Businesses{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#06b6d4]">
               We Have Grown
             </span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-lg">
-            Real results from real trades businesses across the USA and Canada.
+            Real results from real businesses across the USA and Canada.
           </p>
         </motion.div>
 

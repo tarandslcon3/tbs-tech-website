@@ -11,7 +11,10 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=()' },
           {
             key: 'Content-Security-Policy',
-            value: "frame-src 'self' https://form.jotform.com;",
+            value: [
+              "frame-src 'self' https://form.jotform.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://form.jotform.com https://cdn.jotform.com https://www.googletagmanager.com",
+            ].join('; '),
           },
         ],
       },

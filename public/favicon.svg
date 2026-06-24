@@ -1,4 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#0a0f1e"/>
-  <polygon points="18,3 10,18 15,18 14,29 22,14 17,14" fill="#3b82f6"/>
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Layer 1 — dark rounded background -->
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#0a0f1e"/>
+  <!-- Layer 2 — outer hexagon -->
+  <polygon points="10,5.6 22,5.6 28,16 22,26.4 10,26.4 4,16" fill="none" stroke="#3b82f6" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- Layer 3 — inner hexagon glow -->
+  <polygon points="12,8.9 20,8.9 24,16 20,23.1 12,23.1 8,16" fill="none" stroke="#06b6d4" stroke-width="0.8" opacity="0.5"/>
+  <!-- Layer 4 — glow halo behind center dot -->
+  <circle cx="16" cy="16" r="5" fill="#06b6d4" opacity="0.2"/>
+  <!-- Layer 4 — center dot -->
+  <circle cx="16" cy="16" r="3" fill="#06b6d4"/>
+  <!-- Layer 5 — connector dots at edge midpoints -->
+  <circle cx="16" cy="5.6" r="1" fill="#3b82f6"/>
+  <circle cx="26" cy="10.8" r="1" fill="#3b82f6"/>
+  <circle cx="26" cy="21.2" r="1" fill="#3b82f6"/>
+  <circle cx="16" cy="26.4" r="1" fill="#3b82f6"/>
 </svg>

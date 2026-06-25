@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react'
 
 const FLOW = [
-  { id: 'start', message: 'Hi! 👋 I\'m the LeadForge assistant. What trade are you in?', options: ['HVAC', 'Plumbing', 'Electrical', 'Roofing', 'Other'] },
+  { id: 'start', message: 'Hi! 👋 I\'m the TBS Tech assistant. What industry are you in?', options: ['HVAC', 'Plumbing', 'Electrical', 'Roofing', 'Other'] },
   { id: 'goal', message: 'Great! What\'s your main goal right now?', options: ['Get more leads online', 'Replace my old website', 'Add automation', 'Learn about AI tools'] },
   { id: 'size', message: 'How many jobs do you typically complete per month?', options: ['Under 20', '20–50', '50–100', '100+'] },
   { id: 'capture', message: 'Perfect. To send you a free demo, what\'s your name and email?', type: 'input', placeholder: 'Your name and email...' },
@@ -127,7 +127,7 @@ export default function ChatBot() {
           >
             <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>⚡</div>
             <div>
-              <div style={{ color: 'white', fontWeight: 700, fontSize: 14 }}>LeadForge AI</div>
+              <div style={{ color: 'white', fontWeight: 700, fontSize: 14 }}>TBS Tech AI</div>
               <div style={{ color: 'rgba(255,255,255,0.75)', fontSize: 11 }}>Typically replies instantly</div>
             </div>
           </div>

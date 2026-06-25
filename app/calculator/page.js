@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 import CalculatorClient from './CalculatorClient'
 
 export const metadata = {
-  title: 'Business Leak Calculator | LeadForge',
+  title: 'Business Leak Calculator | TBS Tech Services',
   description: 'Find out exactly how much money your business is leaking every month in time, leads, cash flow, and missed automation opportunities.',
 }
 

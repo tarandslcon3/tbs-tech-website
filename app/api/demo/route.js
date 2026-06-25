@@ -40,7 +40,7 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Invalid trade type.' }, { status: 400 })
   }
 
-  console.log('[LeadForge Demo Request]', JSON.stringify(data))
+  console.log('[TBS Tech Services Demo Request]', JSON.stringify(data))
 
   return NextResponse.json({ success: true })
 }

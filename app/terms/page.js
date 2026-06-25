@@ -2,8 +2,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Terms of Service | LeadForge',
-  description: 'LeadForge terms of service — the rules and agreements that govern your use of our website.',
+  title: 'Terms of Service | TBS Tech Services',
+  description: 'TBS Tech Services terms of service — the rules and agreements that govern your use of our website.',
 }
 
 export default function TermsPage() {
@@ -19,14 +19,14 @@ export default function TermsPage() {
             <section>
               <h2>1. Acceptance of Terms</h2>
               <p>
-                By accessing and using the LeadForge website, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.
+                By accessing and using the TBS Tech Services website, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.
               </p>
             </section>
 
             <section>
               <h2>2. Services Description</h2>
               <p>
-                LeadForge provides AI-powered websites, automation systems, and digital marketing services for trades businesses. The specific scope, deliverables, and terms of each engagement are defined in separate written agreements between LeadForge and each client.
+                TBS Tech Services provides AI-powered websites, automation systems, and digital marketing services for any business. The specific scope, deliverables, and terms of each engagement are defined in separate written agreements between TBS Tech Services and each client.
               </p>
             </section>
 
@@ -40,7 +40,7 @@ export default function TermsPage() {
             <section>
               <h2>4. Intellectual Property</h2>
               <p>
-                All content on this website — including text, graphics, logos, and software — is the property of LeadForge and protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.
+                All content on this website — including text, graphics, logos, and software — is the property of TBS Tech Services and protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.
               </p>
             </section>
 
@@ -65,7 +65,7 @@ export default function TermsPage() {
             <section>
               <h2>7. Limitation of Liability</h2>
               <p>
-                To the maximum extent permitted by law, LeadForge shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of this website.
+                To the maximum extent permitted by law, TBS Tech Services shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of this website.
               </p>
             </section>
 

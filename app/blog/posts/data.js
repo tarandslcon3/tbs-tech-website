@@ -160,7 +160,7 @@ export const posts = [
 
 <h2>Protecting Your Business Going Forward</h2>
 <p>Use a business email address with two-factor authentication enabled. Educate any office staff on these red flags. Set up a policy that any change to payment details must be confirmed by a phone call. Consider a cybersecurity awareness training session for your team annually.</p>
-<p>LeadForge builds websites and digital systems for trades businesses. If you have questions about securing your online presence, contact us at tbstechservices@gmail.com.</p>
+<p>TBS Tech Services builds websites and digital systems for any business. If you have questions about securing your online presence, contact us at tbstechservices@gmail.com.</p>
     `,
   },
   {
@@ -204,7 +204,7 @@ export const posts = [
 <p><strong>How to protect yourself:</strong> Run a Google search for your own business name regularly. Consider running Google Ads on your own brand name to protect that real estate. If you find someone impersonating your business, report it to Google.</p>
 
 <h2>Staying Protected in 2025</h2>
-<p>The best protection is awareness and a professional digital presence. A legitimate, well-reviewed website with verified contact information makes it harder for scammers to impersonate you and easier for customers to verify you're real. Contact us to learn how LeadForge builds trusted online presences for trades businesses.</p>
+<p>The best protection is awareness and a professional digital presence. A legitimate, well-reviewed website with verified contact information makes it harder for scammers to impersonate you and easier for customers to verify you're real. Contact us to learn how TBS Tech Services builds trusted online presences for any business.</p>
     `,
   },
   {

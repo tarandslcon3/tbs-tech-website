@@ -6,27 +6,27 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  metadataBase: new URL('https://leadforge-website-inky.vercel.app'),
-  title: 'AI Websites & Automation for Any Business | LeadForge',
+  metadataBase: new URL('https://tbstechservices.vercel.app'),
+  title: 'TBS Tech Services | Websites, Automation and AI Tools for Any Business',
   description:
-    'LeadForge builds AI-powered websites, automation and custom tools for any business worldwide. Get a free consultation today.',
+    'TBS Tech Services builds AI-powered websites, automation workflows and custom tools for small businesses, startups and agencies worldwide. Free demo included. No contracts.',
   keywords: 'AI websites, business automation, lead generation, AI chatbot, web design agency, digital marketing',
   openGraph: {
-    title: 'AI Websites & Automation for Any Business | LeadForge',
+    title: 'TBS Tech Services | Websites, Automation and AI Tools for Any Business',
     description:
-      'LeadForge builds AI-powered websites, automation and custom tools for any business worldwide.',
-    url: 'https://leadforge-website-inky.vercel.app',
-    siteName: 'LeadForge',
+      'TBS Tech Services builds AI-powered websites, automation workflows and custom tools for small businesses, startups and agencies worldwide.',
+    url: 'https://tbstechservices.vercel.app',
+    siteName: 'TBS Tech Services',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Websites & Automation for Any Business | LeadForge',
+    title: 'TBS Tech Services | Websites, Automation and AI Tools for Any Business',
     description: 'AI-powered websites, automation and custom tools for any business worldwide.',
   },
   alternates: {
-    canonical: 'https://leadforge-website-inky.vercel.app',
+    canonical: 'https://tbstechservices.vercel.app',
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
@@ -46,11 +46,11 @@ export const metadata = {
 const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'LeadForge',
+  name: 'TBS Tech Services',
   description: 'Digital agency building AI-powered websites, automation and custom tools for any business worldwide',
   areaServed: 'Worldwide',
   serviceType: ['Web Design', 'AI Automation', 'Lead Generation', 'Digital Marketing', 'Business Automation'],
-  url: 'https://leadforge-website-inky.vercel.app',
+  url: 'https://tbstechservices.vercel.app',
   email: 'tbstechservices@gmail.com',
   priceRange: 'Contact for details',
 }
@@ -58,13 +58,13 @@ const businessSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'LeadForge',
-  url: 'https://leadforge-website-inky.vercel.app',
+  name: 'TBS Tech Services',
+  url: 'https://tbstechservices.vercel.app',
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://leadforge-website-inky.vercel.app/blog?q={search_term_string}',
+      urlTemplate: 'https://tbstechservices.vercel.app/blog?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
@@ -127,7 +127,7 @@ const faqSchema = {
       name: 'Do you provide AI chatbots?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Every LeadForge website includes an AI chatbot that captures leads 24/7, even when your office is closed.',
+        text: 'Yes. Every TBS Tech Services website includes an AI chatbot that captures leads 24/7, even when your office is closed.',
       },
     },
     {

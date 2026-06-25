@@ -35,7 +35,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-2xl font-black text-white tracking-tight">
-            Lead<span className="text-[#3b82f6]">Forge</span>
+            TBS Tech<span className="text-[#3b82f6]"> Services</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

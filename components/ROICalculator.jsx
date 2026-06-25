@@ -99,7 +99,7 @@ export default function ROICalculator() {
   const siteUrl =
     typeof window !== 'undefined'
       ? window.location.origin + '/#calculator'
-      : 'https://leadforge-website-inky.vercel.app/#calculator'
+      : 'https://tbstechservices.vercel.app/#calculator'
 
   const shareText = `My trades business could gain $${totalImpact.toLocaleString()}/year with AI automation. See the calculator:`
 
@@ -139,8 +139,7 @@ export default function ROICalculator() {
               </span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Adjust the sliders to calculate your potential savings and extra revenue with
-              LeadForge.
+              Adjust the sliders to calculate your potential savings and extra revenue with TBS Tech Services.
             </p>
           </div>
 

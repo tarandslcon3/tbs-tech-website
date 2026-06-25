@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: 'Mike D.',
     role: 'Owner, Summit HVAC',
-    quote: 'Before LeadForge, I was getting maybe 5 online leads a month. Now I get 20+ and they come in at all hours. The automated SMS follow-up alone paid for everything in the first month.',
+    quote: 'Before TBS Tech Services, I was getting maybe 5 online leads a month. Now I get 20+ and they come in at all hours. The automated SMS follow-up alone paid for everything in the first month.',
     stars: 5,
     trade: 'HVAC',
   },
@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: 'James R.',
     role: 'Owner, Apex Roofing',
-    quote: "LeadForge built us a website that actually ranks on Google and converts visitors. We went from almost no online presence to 200 Google reviews and a full schedule in three months.",
+    quote: "TBS Tech Services built us a website that actually ranks on Google and converts visitors. We went from almost no online presence to 200 Google reviews and a full schedule in three months.",
     stars: 5,
     trade: 'Roofing',
   },

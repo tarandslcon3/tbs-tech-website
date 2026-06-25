@@ -20,10 +20,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="text-2xl font-black text-white mb-4">
-              Lead<span className="text-[#3b82f6]">Forge</span>
+              TBS Tech<span className="text-[#3b82f6]"> Services</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Digital agency building websites, AI automation and custom tools for businesses worldwide.
+              TBS Tech Services — Digital agency building websites, AI automation and custom tools for businesses worldwide.
             </p>
             <div className="flex flex-wrap gap-2">
               {['Small Business', 'SaaS', 'E-Commerce', 'Finance', 'Real Estate', 'Any Industry'].map((t) => (
@@ -98,7 +98,7 @@ export default function Footer() {
 
         <div className="border-t border-[#1e2a4a] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            © 2025 LeadForge. All rights reserved.
+            © 2025 TBS Tech Services. All rights reserved.
           </p>
           <div className="flex gap-4">
             <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">Privacy</Link>

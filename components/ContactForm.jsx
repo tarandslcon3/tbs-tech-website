@@ -147,9 +147,9 @@ export default function ContactForm() {
             Free Consultation
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Ready to Get{' '}
+            Get Your Free{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#06b6d4]">
-              More Results?
+              TBS Tech Services Demo
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">

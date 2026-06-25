@@ -2,8 +2,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Privacy Policy | LeadForge',
-  description: 'LeadForge privacy policy — how we collect, use, and protect your information.',
+  title: 'Privacy Policy | TBS Tech Services',
+  description: 'TBS Tech Services privacy policy — how we collect, use, and protect your information.',
 }
 
 export default function PrivacyPage() {

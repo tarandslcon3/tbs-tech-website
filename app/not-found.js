@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Page Not Found | LeadForge',
+  title: 'Page Not Found | TBS Tech Services',
 }
 
 export default function NotFound() {

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import BlogListClient from './BlogListClient'
 
 export const metadata = {
-  title: 'Blog — AI Websites & Automation Tips | LeadForge',
+  title: 'Blog — AI Websites & Automation Tips | TBS Tech Services',
   description:
     'Practical guides on websites, AI automation, and getting more leads for any business.',
 }
@@ -21,7 +21,7 @@ export default function BlogPage() {
               Resources for Growing Businesses
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
-              The LeadForge Blog
+              The TBS Tech Services Blog
             </h1>
             <p className="text-gray-400 text-lg max-w-xl mx-auto">
               Practical guides on AI, websites, and automation for any business.

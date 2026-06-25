@@ -41,10 +41,10 @@ export default function BlogPostClient({ post, otherPosts }) {
 
           <div className="mt-16 bg-gradient-to-r from-[#3b82f6]/10 to-[#06b6d4]/10 border border-[#3b82f6]/20 rounded-2xl p-10 text-center">
             <h3 className="text-2xl font-bold text-white mb-3">
-              Ready to grow your trades business?
+              Want a website that actually works for your business?
             </h3>
             <p className="text-gray-400 mb-6">
-              Get a free demo website built for your business — no cost, no commitment.
+              We build a free demo for your specific business — no cost, no commitment, no pressure.
             </p>
             <Link
               href="/#demo"

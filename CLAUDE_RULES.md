@@ -1,4 +1,4 @@
-# CLAUDE_RULES.md — LeadForge Permanent Rules
+# CLAUDE_RULES.md — TBS Tech Services Permanent Rules
 
 These rules apply to every conversation and every change made to this codebase.
 

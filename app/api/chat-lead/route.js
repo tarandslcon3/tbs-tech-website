@@ -23,7 +23,8 @@ export async function POST(request) {
     contact: sanitizeInput(body.contact || ''),
   }
 
-  console.log('[chat-lead]', JSON.stringify(lead))
+  const timestamp = new Date().toISOString()
+  console.log('[TBS Tech Services chat-lead]', timestamp, JSON.stringify(lead))
 
   const apiKey = process.env.JOTFORM_API_KEY
   if (!apiKey) {
@@ -34,19 +35,28 @@ export async function POST(request) {
     const emailMatch = lead.contact.match(/[^\s@]+@[^\s@]+\.[^\s@]+/)
     const email = emailMatch ? emailMatch[0] : 'no-email@chatbot.lead'
 
+    // Extract first name from contact string (first word before any comma/email/space)
+    const nameMatch = lead.contact.replace(emailMatch?.[0] || '', '').trim()
+    const firstName = nameMatch.split(/[\s,]+/)[0] || 'Chat'
+
     const message = [
+      `Source: TBS Tech Services Chatbot`,
+      `Submitted: ${timestamp}`,
+      ``,
       `Industry: ${lead.trade || 'Not specified'}`,
       `Goal: ${lead.goal || 'Not specified'}`,
       `Business size: ${lead.size || 'Not specified'}`,
-      `Contact: ${lead.contact || 'Not provided'}`,
+      `Contact provided: ${lead.contact || 'Not provided'}`,
     ].join('\n')
 
     const params = new URLSearchParams()
     params.set('apiKey', apiKey)
-    params.set('submission[3][first]', 'Chat')
-    params.set('submission[3][last]', 'Lead')
+    params.set('submission[3][first]', firstName)
+    params.set('submission[3][last]', 'Chat Lead')
     params.set('submission[4]', email)
-    params.set('submission[6]', 'Chat Bot')
+    params.set('submission[5]', 'Via Chatbot')
+    params.set('submission[6]', 'Chat Bot Lead')
+    params.set('submission[7]', lead.trade || 'Unknown')
     params.set('submission[9]', message)
 
     const res = await fetch('https://api.jotform.com/form/261737577809069/submissions', {

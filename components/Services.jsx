@@ -54,6 +54,7 @@ function ServiceCard({ service, index }) {
   const cardRef = useRef(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
   const [isHovered, setIsHovered] = useState(false)
+  const [shine, setShine] = useState({ x: 50, y: 50 })
 
   const handleMouseMove = (e) => {
     const rect = cardRef.current?.getBoundingClientRect()
@@ -61,6 +62,10 @@ function ServiceCard({ service, index }) {
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * -10
     setTilt({ x: y, y: x })
+    setShine({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    })
   }
 
   const delay = `${(index % 3) * 0.12}s`
@@ -89,9 +94,24 @@ function ServiceCard({ service, index }) {
             ? `0 0 0 1px ${service.color}40, 0 0 28px ${service.color}18`
             : 'none',
           height: '100%',
+          position: 'relative',
+          overflow: 'hidden',
         }}
         className="glass-card rounded-2xl p-8 cursor-default"
       >
+        {/* Glass shine overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: `radial-gradient(circle at ${shine.x}% ${shine.y}%, rgba(255,255,255,0.08) 0%, transparent 60%)`,
+            opacity: isHovered ? 1 : 0,
+            transition: 'opacity 0.2s ease',
+            pointerEvents: 'none',
+            borderRadius: 'inherit',
+          }}
+        />
+
         <div
           className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6"
           style={{ background: `${service.color}15` }}

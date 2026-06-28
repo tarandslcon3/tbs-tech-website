@@ -1,6 +1,15 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+function LinkedInIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  )
+}
 
 export default function Footer() {
   const pathname = usePathname()
@@ -84,12 +93,23 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-white font-semibold mb-5">Get In Touch</h4>
-            <button
-              onClick={() => scrollTo('contact')}
-              className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm"
-            >
-              Get Free Demo
-            </button>
+            <div className="flex flex-col gap-4">
+              <a
+                href="https://www.linkedin.com/company/133394575/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-[#3b82f6] transition-colors text-sm"
+              >
+                <LinkedInIcon />
+                LinkedIn
+              </a>
+              <button
+                onClick={() => scrollTo('contact')}
+                className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm w-fit"
+              >
+                Get Free Demo
+              </button>
+            </div>
           </div>
         </div>
 

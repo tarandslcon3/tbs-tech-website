@@ -2,6 +2,10 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import * as THREE from 'three'
+import dynamic from 'next/dynamic'
+
+const ParticleNetwork = dynamic(() => import('@/components/ParticleNetwork'), { ssr: false })
+const DeviceMockupComponent = dynamic(() => import('@/components/DeviceMockup'), { ssr: false })
 
 const TRUST_ITEMS = [
   'Small Businesses',
@@ -135,63 +139,76 @@ export default function Hero() {
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
-  // Duplicate for seamless loop
   const trustItems = [...TRUST_ITEMS, ...TRUST_ITEMS]
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0a0f1e]">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0f1e]/20 to-[#0a0f1e]/70 pointer-events-none" />
+      {/* Particle network — behind Three.js canvas */}
+      <ParticleNetwork />
 
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full pt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 bg-[#3b82f6]/10 border border-[#3b82f6]/30 rounded-full px-4 py-2 text-[#3b82f6] text-sm font-medium mb-8"
-        >
-          <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
-          AI Websites & Automation for Any Business
-        </motion.div>
+      {/* Three.js canvas — unchanged */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ zIndex: 1 }} />
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
-        >
-          Your Phone Should Be{' '}
-          <span className="gradient-text">Ringing Non-Stop</span>
-        </motion.h1>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0f1e]/20 to-[#0a0f1e]/70 pointer-events-none" style={{ zIndex: 2 }} />
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed"
-        >
-          We build AI-powered websites, automation and custom tools for any business worldwide. Get a free demo in 24 hours.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <button
-            onClick={() => scrollTo('contact')}
-            className="px-8 py-4 bg-[#3b82f6] text-white font-bold rounded-xl hover:bg-blue-500 transition-all duration-200 text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
+      {/* Hero content — flex on lg for device mockup */}
+      <div className="relative z-10 px-4 max-w-7xl mx-auto w-full pt-20 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
+        {/* Text content */}
+        <div className="text-center lg:text-left flex-1 min-w-0">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 bg-[#3b82f6]/10 border border-[#3b82f6]/30 rounded-full px-4 py-2 text-[#3b82f6] text-sm font-medium mb-8"
           >
-            Get a Free Demo
-          </button>
-          <a
-            href="/calculator"
-            className="px-8 py-4 border-2 border-white/30 text-white font-bold rounded-xl hover:border-white hover:bg-white/5 transition-all duration-200 text-lg backdrop-blur-sm"
+            <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse" />
+            AI Websites & Automation for Any Business
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
           >
-            Calculate Your Leaks
-          </a>
-        </motion.div>
+            Your Phone Should Be{' '}
+            <span className="gradient-text">Ringing Non-Stop</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+          >
+            We build AI-powered websites, automation and custom tools for any business worldwide. Get a free demo in 24 hours.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+          >
+            <button
+              onClick={() => scrollTo('contact')}
+              className="px-8 py-4 bg-[#3b82f6] text-white font-bold rounded-xl hover:bg-blue-500 transition-all duration-200 text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
+            >
+              Get a Free Demo
+            </button>
+            <a
+              href="/calculator"
+              className="px-8 py-4 border-2 border-white/30 text-white font-bold rounded-xl hover:border-white hover:bg-white/5 transition-all duration-200 text-lg backdrop-blur-sm"
+            >
+              Calculate Your Leaks
+            </a>
+          </motion.div>
+        </div>
+
+        {/* 3D Device Mockup — desktop only */}
+        <div className="hidden lg:block flex-shrink-0">
+          <DeviceMockupComponent />
+        </div>
       </div>
 
       {/* Trust strip marquee */}

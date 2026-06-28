@@ -185,3 +185,35 @@ input[type='range']::-moz-range-thumb {
 .marquee-track:hover {
   animation-play-state: paused;
 }
+
+/* 3D scroll reveal */
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(1200px) rotateX(15deg) translateY(60px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-3d.visible {
+  opacity: 1;
+  transform: perspective(1200px) rotateX(0deg) translateY(0px) scale(1);
+}
+
+/* Morphing blob behind contact section */
+@keyframes morphBlob {
+  0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  100% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+.blob-bg {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
+  animation: morphBlob 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}

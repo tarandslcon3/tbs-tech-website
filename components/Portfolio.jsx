@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
@@ -32,6 +32,42 @@ const cases = [
     color: '#8b5cf6',
   },
 ]
+
+function parseStatValue(value) {
+  if (value.startsWith('#')) return { prefix: '#', target: parseInt(value.slice(1)), suffix: '' }
+  if (value.endsWith('+')) return { prefix: '', target: parseInt(value), suffix: '+' }
+  if (value.endsWith('%')) return { prefix: '', target: parseInt(value), suffix: '%' }
+  if (value.endsWith('min')) return { prefix: '', target: parseInt(value), suffix: 'min' }
+  return { prefix: '', target: parseInt(value) || 0, suffix: '' }
+}
+
+function CountUp({ value, isVisible, color }) {
+  const { prefix, target, suffix } = parseStatValue(value)
+  const [count, setCount] = useState(0)
+  const hasRun = useRef(false)
+
+  useEffect(() => {
+    if (!isVisible || hasRun.current) return
+    hasRun.current = true
+    const duration = 1200
+    const startTime = Date.now()
+    const tick = () => {
+      const elapsed = Date.now() - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCount(Math.floor(eased * target))
+      if (progress < 1) requestAnimationFrame(tick)
+      else setCount(target)
+    }
+    requestAnimationFrame(tick)
+  }, [isVisible, target])
+
+  return (
+    <div className="text-2xl font-black" style={{ color }}>
+      {prefix}{count}{suffix}
+    </div>
+  )
+}
 
 function CaseCard({ item, index }) {
   const { ref: revealRef, isVisible } = useScrollReveal()
@@ -81,12 +117,12 @@ function CaseCard({ item, index }) {
         <p className="text-gray-400 text-sm leading-relaxed mb-8">{item.detail}</p>
         <div className="flex gap-6">
           <div>
-            <div className="text-2xl font-black" style={{ color: item.color }}>{item.stat1.value}</div>
+            <CountUp value={item.stat1.value} isVisible={isVisible} color={item.color} />
             <div className="text-gray-500 text-xs mt-1">{item.stat1.label}</div>
           </div>
           <div className="w-px bg-white/10" />
           <div>
-            <div className="text-2xl font-black" style={{ color: item.color }}>{item.stat2.value}</div>
+            <CountUp value={item.stat2.value} isVisible={isVisible} color={item.color} />
             <div className="text-gray-500 text-xs mt-1">{item.stat2.label}</div>
           </div>
         </div>

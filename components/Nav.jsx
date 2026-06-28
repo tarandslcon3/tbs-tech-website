@@ -24,6 +24,8 @@ export default function Nav() {
     }
   }
 
+  const isActive = (path) => pathname === path || pathname.startsWith(path + '/')
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -47,7 +49,11 @@ export default function Nav() {
             </button>
             <Link
               href="/calculator"
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+              className={`transition-colors text-sm font-medium pb-0.5 ${
+                isActive('/calculator')
+                  ? 'text-white border-b-2 border-[#3b82f6]'
+                  : 'text-gray-300 hover:text-white'
+              }`}
             >
               Calculator
             </Link>
@@ -59,7 +65,11 @@ export default function Nav() {
             </button>
             <Link
               href="/blog"
-              className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+              className={`transition-colors text-sm font-medium pb-0.5 ${
+                isActive('/blog')
+                  ? 'text-white border-b-2 border-[#3b82f6]'
+                  : 'text-gray-300 hover:text-white'
+              }`}
             >
               Blog
             </Link>
@@ -86,9 +96,21 @@ export default function Nav() {
           <div className="md:hidden bg-[#0a0f1e] border-t border-[#1e2a4a] py-6">
             <div className="flex flex-col gap-5 px-2">
               <button onClick={() => scrollTo('services')} className="text-gray-300 hover:text-white text-left text-base">Services</button>
-              <Link href="/calculator" className="text-gray-300 hover:text-white text-base" onClick={() => setMobileOpen(false)}>Calculator</Link>
+              <Link
+                href="/calculator"
+                className={`text-base ${isActive('/calculator') ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'}`}
+                onClick={() => setMobileOpen(false)}
+              >
+                Calculator
+              </Link>
               <button onClick={() => scrollTo('portfolio')} className="text-gray-300 hover:text-white text-left text-base">Results</button>
-              <Link href="/blog" className="text-gray-300 hover:text-white text-base" onClick={() => setMobileOpen(false)}>Blog</Link>
+              <Link
+                href="/blog"
+                className={`text-base ${isActive('/blog') ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'}`}
+                onClick={() => setMobileOpen(false)}
+              >
+                Blog
+              </Link>
               <button
                 onClick={() => scrollTo('contact')}
                 className="w-full py-3 bg-[#3b82f6] text-white font-semibold rounded-lg text-base"

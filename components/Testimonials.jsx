@@ -26,11 +26,25 @@ const testimonials = [
   },
 ]
 
+function StarIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="#fbbf24"
+      style={{ filter: 'drop-shadow(0 0 3px rgba(251,191,36,0.55))' }}
+    >
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg>
+  )
+}
+
 function Stars({ count }) {
   return (
     <div className="flex gap-1 mb-4">
       {Array.from({ length: count }).map((_, i) => (
-        <span key={i} style={{ color: '#fbbf24', fontSize: 16 }}>★</span>
+        <StarIcon key={i} />
       ))}
     </div>
   )
@@ -60,7 +74,10 @@ function TestimonialCard({ t, index }) {
         &ldquo;{t.quote}&rdquo;
       </p>
       <div className="flex items-center gap-3 pt-6 border-t border-white/10">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#06b6d4] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+        <div
+          className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#06b6d4] flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
+          style={{ boxShadow: '0 0 0 2px rgba(59,130,246,0.3), 0 0 12px rgba(59,130,246,0.2)' }}
+        >
           {t.name[0]}
         </div>
         <div>

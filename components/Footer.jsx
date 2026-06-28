@@ -44,7 +44,14 @@ export default function Footer() {
                 'CRM Integration',
                 'Review Generation',
               ].map((s) => (
-                <li key={s} className="text-gray-400 text-sm">{s}</li>
+                <li key={s}>
+                  <button
+                    onClick={() => scrollTo('services')}
+                    className="text-gray-400 hover:text-white transition-colors text-sm text-left cursor-pointer"
+                  >
+                    {s}
+                  </button>
+                </li>
               ))}
             </ul>
           </div>
@@ -98,7 +105,7 @@ export default function Footer() {
 
         <div className="border-t border-[#1e2a4a] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            © 2025 TBS Tech Services. All rights reserved.
+            © {new Date().getFullYear()} TBS Tech Services. All rights reserved.
           </p>
           <div className="flex gap-4">
             <Link href="/privacy" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">Privacy</Link>

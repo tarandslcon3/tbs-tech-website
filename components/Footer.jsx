@@ -83,23 +83,13 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-5">Contact</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="mailto:tbstechservices@gmail.com" className="text-gray-400 hover:text-white transition-colors text-sm break-all">
-                  tbstechservices@gmail.com
-                </a>
-              </li>
-              <li className="text-gray-400 text-sm">Serving Clients Worldwide</li>
-              <li className="pt-2">
-                <button
-                  onClick={() => scrollTo('contact')}
-                  className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm"
-                >
-                  Get Free Demo
-                </button>
-              </li>
-            </ul>
+            <h4 className="text-white font-semibold mb-5">Get In Touch</h4>
+            <button
+              onClick={() => scrollTo('contact')}
+              className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm"
+            >
+              Get Free Demo
+            </button>
           </div>
         </div>
 

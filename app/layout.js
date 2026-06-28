@@ -1,10 +1,7 @@
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import ScrollLine from '@/components/ScrollLine'
-import dynamic from 'next/dynamic'
 import './globals.css'
-
-const SmoothScroll = dynamic(() => import('@/components/SmoothScroll'), { ssr: false })
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -168,7 +165,6 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <div className="grain-overlay" aria-hidden="true" />
-        <SmoothScroll />
         <ScrollLine />
         {children}
         <Script

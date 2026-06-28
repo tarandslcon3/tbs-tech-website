@@ -47,19 +47,22 @@ function CountUp({ value, isVisible, color }) {
   const hasRun = useRef(false)
 
   useEffect(() => {
-    if (!isVisible || hasRun.current) return
+    if (!isVisible || hasRun.current || target === 0) return
     hasRun.current = true
     const duration = 1200
     const startTime = Date.now()
-    const tick = () => {
+    const interval = setInterval(() => {
       const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / duration, 1)
+      if (elapsed >= duration) {
+        setCount(target)
+        clearInterval(interval)
+        return
+      }
+      const progress = elapsed / duration
       const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.floor(eased * target))
-      if (progress < 1) requestAnimationFrame(tick)
-      else setCount(target)
-    }
-    requestAnimationFrame(tick)
+      setCount(Math.round(target * eased))
+    }, 16)
+    return () => clearInterval(interval)
   }, [isVisible, target])
 
   return (
@@ -70,7 +73,7 @@ function CountUp({ value, isVisible, color }) {
 }
 
 function CaseCard({ item, index }) {
-  const { ref: revealRef, isVisible } = useScrollReveal({ threshold: 0.2, rootMargin: '0px 0px -50px 0px' })
+  const { ref: revealRef, isVisible } = useScrollReveal({ threshold: 0.3 })
   const cardRef = useRef(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
@@ -156,7 +159,7 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cases.map((item, i) => (
             <CaseCard key={i} item={item} index={i} />
           ))}

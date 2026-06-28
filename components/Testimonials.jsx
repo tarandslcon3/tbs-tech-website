@@ -114,7 +114,7 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <TestimonialCard key={i} t={t} index={i} />
           ))}

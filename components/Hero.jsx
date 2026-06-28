@@ -83,17 +83,6 @@ export default function Hero() {
     }
     window.addEventListener('resize', handleResize)
 
-    // Sphere exit tied to Lenis scroll position via custom event
-    const handleLenisScroll = (e) => {
-      const p = Math.min(e.detail.scroll / 500, 1)
-      icosahedron.scale.setScalar(1 - 0.7 * p)
-      icosahedron.position.x = 3 * p
-      icoMat.opacity = 0.7 * (1 - p)
-      innerMat.opacity = 0.4 * (1 - p)
-      particles.position.y = -2 * p
-    }
-    window.addEventListener('lenis-scroll', handleLenisScroll)
-
     const clock = new THREE.Clock()
     let animId
     const origPositions = new Float32Array(icoGeo.attributes.position.array)
@@ -139,7 +128,6 @@ export default function Hero() {
 
     return () => {
       cancelAnimationFrame(animId)
-      window.removeEventListener('lenis-scroll', handleLenisScroll)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
@@ -187,7 +175,7 @@ export default function Hero() {
             AI Websites & Automation for Any Business
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-tight">
             {['Your', 'Phone', 'Should', 'Be'].map((word, i) => (
               <span key={word} style={{ display: 'inline-block', overflow: 'hidden', marginRight: '0.28em' }}>
                 <span style={{

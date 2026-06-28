@@ -1,6 +1,9 @@
 'use client'
 import { useEffect, useRef } from 'react'
 
+const COUNT = 40
+const FPS_INTERVAL = 1000 / 30  // cap at 30fps
+
 export default function ParticleNetwork() {
   const canvasRef = useRef(null)
 
@@ -9,39 +12,32 @@ export default function ParticleNetwork() {
     if (!canvas) return
     const ctx = canvas.getContext('2d', { willReadFrequently: true })
 
-    const isMobile = window.innerWidth < 768
-    const COUNT = isMobile ? 30 : 60
-
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
 
     const particles = Array.from({ length: COUNT }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.6,
-      vy: (Math.random() - 0.5) * 0.6,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
     }))
 
-    const mouse = { x: -9999, y: -9999 }
     let animId
     let paused = false
-
-    const handleMouseMove = (e) => {
-      mouse.x = e.clientX
-      mouse.y = e.clientY
-    }
+    let lastTime = 0
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth
       height = canvas.height = window.innerHeight
     }
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     window.addEventListener('resize', handleResize, { passive: true })
 
-    const draw = () => {
-      if (paused) return
+    const draw = (timestamp) => {
       animId = requestAnimationFrame(draw)
+      if (paused) return
+      if (timestamp - lastTime < FPS_INTERVAL) return
+      lastTime = timestamp
+
       ctx.clearRect(0, 0, width, height)
 
       for (const p of particles) {
@@ -56,67 +52,45 @@ export default function ParticleNetwork() {
         ctx.fill()
       }
 
+      // Blue network lines only — no mouse interaction lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 150) {
+          if (dist < 140) {
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(59,130,246,${(1 - dist / 150) * 0.3})`
+            ctx.strokeStyle = `rgba(59,130,246,${(1 - dist / 140) * 0.35})`
             ctx.lineWidth = 1
             ctx.stroke()
           }
         }
       }
-
-      for (const p of particles) {
-        const dx = mouse.x - p.x
-        const dy = mouse.y - p.y
-        const dist = Math.sqrt(dx * dx + dy * dy)
-        if (dist < 200) {
-          ctx.beginPath()
-          ctx.moveTo(mouse.x, mouse.y)
-          ctx.lineTo(p.x, p.y)
-          ctx.strokeStyle = 'rgba(6,182,212,0.5)'
-          ctx.lineWidth = 1
-          ctx.stroke()
-        }
-      }
     }
 
-    // Pause when tab is hidden to save CPU/GPU
+    // Pause when tab is hidden
     const handleVisibilityChange = () => {
       if (document.hidden) {
         paused = true
-        cancelAnimationFrame(animId)
       } else {
         paused = false
-        draw()
       }
     }
     document.addEventListener('visibilitychange', handleVisibilityChange)
 
-    // Pause when hero section scrolls out of viewport
+    // Pause when hero scrolls out of viewport
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          if (!paused) draw()
-        } else {
-          cancelAnimationFrame(animId)
-        }
-      },
+      ([entry]) => { paused = !entry.isIntersecting },
       { threshold: 0 }
     )
     observer.observe(canvas)
 
-    draw()
+    animId = requestAnimationFrame(draw)
 
     return () => {
       cancelAnimationFrame(animId)
-      window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('resize', handleResize)
       document.removeEventListener('visibilitychange', handleVisibilityChange)
       observer.disconnect()

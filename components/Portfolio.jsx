@@ -70,7 +70,7 @@ function CountUp({ value, isVisible, color }) {
 }
 
 function CaseCard({ item, index }) {
-  const { ref: revealRef, isVisible } = useScrollReveal()
+  const { ref: revealRef, isVisible } = useScrollReveal({ threshold: 0.2, rootMargin: '0px 0px -50px 0px' })
   const cardRef = useRef(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
@@ -156,7 +156,7 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {cases.map((item, i) => (
             <CaseCard key={i} item={item} index={i} />
           ))}

@@ -7,10 +7,10 @@ export default function ParticleNetwork() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d', { willReadFrequently: true })
 
     const isMobile = window.innerWidth < 768
-    const COUNT = isMobile ? 40 : 80
+    const COUNT = isMobile ? 30 : 60
 
     let width = (canvas.width = window.innerWidth)
     let height = (canvas.height = window.innerHeight)
@@ -23,6 +23,8 @@ export default function ParticleNetwork() {
     }))
 
     const mouse = { x: -9999, y: -9999 }
+    let animId
+    let paused = false
 
     const handleMouseMove = (e) => {
       mouse.x = e.clientX
@@ -34,12 +36,12 @@ export default function ParticleNetwork() {
       height = canvas.height = window.innerHeight
     }
 
-    window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('resize', handleResize)
-
-    let animId
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    window.addEventListener('resize', handleResize, { passive: true })
 
     const draw = () => {
+      if (paused) return
+      animId = requestAnimationFrame(draw)
       ctx.clearRect(0, 0, width, height)
 
       for (const p of particles) {
@@ -54,7 +56,6 @@ export default function ParticleNetwork() {
         ctx.fill()
       }
 
-      // Lines between nearby particles
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
@@ -71,7 +72,6 @@ export default function ParticleNetwork() {
         }
       }
 
-      // Cyan lines from mouse to nearby particles
       for (const p of particles) {
         const dx = mouse.x - p.x
         const dy = mouse.y - p.y
@@ -85,9 +85,32 @@ export default function ParticleNetwork() {
           ctx.stroke()
         }
       }
-
-      animId = requestAnimationFrame(draw)
     }
+
+    // Pause when tab is hidden to save CPU/GPU
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        paused = true
+        cancelAnimationFrame(animId)
+      } else {
+        paused = false
+        draw()
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    // Pause when hero section scrolls out of viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (!paused) draw()
+        } else {
+          cancelAnimationFrame(animId)
+        }
+      },
+      { threshold: 0 }
+    )
+    observer.observe(canvas)
 
     draw()
 
@@ -95,6 +118,8 @@ export default function ParticleNetwork() {
       cancelAnimationFrame(animId)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('resize', handleResize)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      observer.disconnect()
     }
   }, [])
 

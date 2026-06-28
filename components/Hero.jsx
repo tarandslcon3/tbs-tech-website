@@ -4,10 +4,6 @@ import { motion } from 'framer-motion'
 import * as THREE from 'three'
 import dynamic from 'next/dynamic'
 import { useMagnetic } from '@/hooks/useMagnetic'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const ParticleNetwork = dynamic(() => import('@/components/ParticleNetwork'), { ssr: false })
 const DeviceMockupComponent = dynamic(() => import('@/components/DeviceMockup'), { ssr: false })
@@ -87,20 +83,16 @@ export default function Hero() {
     }
     window.addEventListener('resize', handleResize)
 
-    // GSAP ScrollTrigger — sphere exits as user scrolls 0→500px
-    const scrollTrigger = ScrollTrigger.create({
-      start: 'top top',
-      end: '500 top',
-      scrub: 1,
-      onUpdate: (self) => {
-        const p = self.progress
-        icosahedron.scale.setScalar(1 - 0.7 * p)
-        icosahedron.position.x = 3 * p
-        icoMat.opacity = 0.7 * (1 - p)
-        innerMat.opacity = 0.4 * (1 - p)
-        particles.position.y = -2 * p
-      },
-    })
+    // Sphere exit tied to Lenis scroll position via custom event
+    const handleLenisScroll = (e) => {
+      const p = Math.min(e.detail.scroll / 500, 1)
+      icosahedron.scale.setScalar(1 - 0.7 * p)
+      icosahedron.position.x = 3 * p
+      icoMat.opacity = 0.7 * (1 - p)
+      innerMat.opacity = 0.4 * (1 - p)
+      particles.position.y = -2 * p
+    }
+    window.addEventListener('lenis-scroll', handleLenisScroll)
 
     const clock = new THREE.Clock()
     let animId
@@ -147,7 +139,7 @@ export default function Hero() {
 
     return () => {
       cancelAnimationFrame(animId)
-      scrollTrigger.kill()
+      window.removeEventListener('lenis-scroll', handleLenisScroll)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)

@@ -1,218 +1,102 @@
 'use client'
-import { useEffect, useRef } from 'react'
-import * as THREE from 'three'
+import { useEffect, useState, useRef } from 'react'
 
 const NOTIFICATIONS = [
-  { emoji: '📱', title: 'New Lead', body: "Mike's HVAC — Quote request $2,400" },
-  { emoji: '📱', title: 'New Lead', body: "Sarah's Plumbing — Emergency repair $800" },
-  { emoji: '✅', title: 'Booking Confirmed', body: 'James Roofing — $3,200 job booked' },
-  { emoji: '📱', title: 'New Lead', body: 'Downtown Restaurant — Website redesign' },
+  { emoji: '📱', title: 'New Lead', body: "Mike's HVAC — Quote request $2,400", color: '#3b82f6' },
+  { emoji: '📱', title: 'New Lead', body: "Sarah's Plumbing — Emergency repair $800", color: '#3b82f6' },
+  { emoji: '✅', title: 'Booking Confirmed', body: 'James Roofing — $3,200 job booked', color: '#10b981' },
+  { emoji: '📱', title: 'New Lead', body: 'Downtown Restaurant — Website redesign', color: '#3b82f6' },
 ]
 
-function drawPhone(ctx, W, H, notifIndex, slideProgress) {
-  ctx.clearRect(0, 0, W, H)
-
-  // Background
-  ctx.fillStyle = '#0d1117'
-  ctx.fillRect(0, 0, W, H)
-
-  // Status bar
-  ctx.fillStyle = '#161b22'
-  ctx.fillRect(0, 0, W, 32)
-  ctx.fillStyle = 'rgba(255,255,255,0.6)'
-  ctx.font = '10px sans-serif'
-  ctx.fillText('9:41', 14, 22)
-  ctx.fillStyle = '#3b82f6'
-  ctx.fillRect(W - 18, 11, 12, 10)
-
-  // App header
-  ctx.fillStyle = '#161b22'
-  ctx.fillRect(0, 32, W, 44)
-  ctx.fillStyle = '#3b82f6'
-  ctx.font = 'bold 13px sans-serif'
-  ctx.fillText('TBS Leads', 14, 58)
-  ctx.fillStyle = 'rgba(255,255,255,0.35)'
-  ctx.font = '9px sans-serif'
-  ctx.fillText('Live notifications', 14, 72)
-
-  const NOTIF_H = 76
-  const GAP = 8
-  const startY = 84
-
-  // Previous notifications (static)
-  for (let i = 0; i < notifIndex; i++) {
-    const y = startY + i * (NOTIF_H + GAP)
-    if (y + NOTIF_H > H - 10) break
-    drawNotifCard(ctx, W, y, NOTIFICATIONS[i % NOTIFICATIONS.length], 1)
-  }
-
-  // Current notification — slides in from below
-  const eased = 1 - Math.pow(1 - slideProgress, 3)
-  const currentY = startY + notifIndex * (NOTIF_H + GAP) + (1 - eased) * 80
-  if (currentY < H - 10) {
-    drawNotifCard(ctx, W, currentY, NOTIFICATIONS[notifIndex % NOTIFICATIONS.length], Math.min(1, slideProgress * 2))
-  }
-}
-
-function drawNotifCard(ctx, W, y, notif, alpha) {
-  const NOTIF_H = 76
-  ctx.globalAlpha = alpha
-
-  ctx.fillStyle = '#1a1f36'
-  ctx.beginPath()
-  if (ctx.roundRect) {
-    ctx.roundRect(10, y, W - 20, NOTIF_H, 8)
-  } else {
-    ctx.rect(10, y, W - 20, NOTIF_H)
-  }
-  ctx.fill()
-
-  // Blue left accent bar
-  ctx.fillStyle = '#3b82f6'
-  ctx.fillRect(10, y, 4, NOTIF_H)
-
-  // Emoji
-  ctx.font = '16px sans-serif'
-  ctx.fillText(notif.emoji, 24, y + 28)
-
-  // Title
-  ctx.fillStyle = '#ffffff'
-  ctx.font = 'bold 11px sans-serif'
-  ctx.fillText(notif.title, 48, y + 26)
-
-  // Body text
-  ctx.fillStyle = 'rgba(255,255,255,0.55)'
-  ctx.font = '9.5px sans-serif'
-  const words = notif.body.split(' ')
-  let line = ''; let lineY = y + 42
-  for (const w of words) {
-    const test = line + w + ' '
-    if (ctx.measureText(test).width > W - 68 && line !== '') {
-      ctx.fillText(line, 48, lineY); line = w + ' '; lineY += 13
-    } else { line = test }
-  }
-  ctx.fillText(line, 48, lineY)
-
-  ctx.globalAlpha = 1
+function NotifCard({ id, notif, isNew }) {
+  return (
+    <div
+      style={{
+        background: '#1a1f36',
+        borderRadius: '10px',
+        padding: '10px 12px',
+        borderLeft: `3px solid ${notif.color}`,
+        display: 'flex',
+        gap: '8px',
+        alignItems: 'flex-start',
+        animation: isNew ? 'notifSlideIn 0.45s ease forwards' : 'none',
+      }}
+    >
+      <span style={{ fontSize: '14px', lineHeight: 1.2 }}>{notif.emoji}</span>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ color: '#fff', fontSize: '10px', fontWeight: '700', fontFamily: 'system-ui', marginBottom: '2px' }}>
+          {notif.title}
+        </div>
+        <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: '9px', fontFamily: 'system-ui', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {notif.body}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default function DeviceMockup() {
-  const mountRef = useRef(null)
-  const mouseRef = useRef({ x: 0, y: 0 })
+  const [cards, setCards] = useState([{ id: 0, notif: NOTIFICATIONS[0], isNew: true }])
+  const idRef = useRef(1)
+  const notifIdxRef = useRef(1)
 
   useEffect(() => {
-    const mount = mountRef.current
-    if (!mount) return
-
-    const W = mount.clientWidth || 200
-    const H = mount.clientHeight || 380
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-    renderer.setSize(W, H)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    mount.appendChild(renderer.domElement)
-
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 100)
-    camera.position.set(0, 0, 5)
-
-    scene.add(new THREE.AmbientLight(0xffffff, 0.6))
-    const blueLight = new THREE.PointLight(0x3b82f6, 2, 10)
-    blueLight.position.set(2, 2, 3)
-    scene.add(blueLight)
-
-    // Phone body
-    const phoneMat = new THREE.MeshPhongMaterial({ color: 0x0d1117, shininess: 120 })
-    const phoneBody = new THREE.Mesh(new THREE.BoxGeometry(1.4, 2.8, 0.12), phoneMat)
-    scene.add(phoneBody)
-
-    // Screen canvas texture
-    const CANVAS_W = 220, CANVAS_H = 440
-    const texCanvas = document.createElement('canvas')
-    texCanvas.width = CANVAS_W
-    texCanvas.height = CANVAS_H
-    const texCtx = texCanvas.getContext('2d')
-    const phoneTex = new THREE.CanvasTexture(texCanvas)
-
-    const screenMat = new THREE.MeshBasicMaterial({ map: phoneTex })
-    const screenMesh = new THREE.Mesh(new THREE.PlaneGeometry(1.22, 2.56), screenMat)
-    screenMesh.position.z = 0.065
-    scene.add(screenMesh)
-
-    // Notch
-    const notchMat = new THREE.MeshBasicMaterial({ color: 0x0d1117 })
-    const notch = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.07, 0.01), notchMat)
-    notch.position.set(0, 1.3, 0.07)
-    scene.add(notch)
-
-    // Notification animation state
-    let notifIndex = 0
-    let slideProgress = 0
-    let lastChange = Date.now()
-    const SLIDE_DURATION = 600
-    const HOLD_DURATION = 2800
-
-    const handleMouseMove = (e) => {
-      mouseRef.current.x = (e.clientX / window.innerWidth - 0.5) * 2
-      mouseRef.current.y = (e.clientY / window.innerHeight - 0.5) * 2
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-
-    let animId
-    const animate = () => {
-      animId = requestAnimationFrame(animate)
-      const now = Date.now()
-      const elapsed = now - lastChange
-
-      if (elapsed < SLIDE_DURATION) {
-        slideProgress = elapsed / SLIDE_DURATION
-      } else {
-        slideProgress = 1
-        if (elapsed > SLIDE_DURATION + HOLD_DURATION) {
-          notifIndex = (notifIndex + 1) % NOTIFICATIONS.length
-          slideProgress = 0
-          lastChange = now
-        }
-      }
-
-      drawPhone(texCtx, CANVAS_W, CANVAS_H, notifIndex, slideProgress)
-      phoneTex.needsUpdate = true
-
-      const t = Date.now() * 0.001
-      const floatY = Math.sin(t * 0.8) * 0.08
-
-      phoneBody.position.y = floatY
-      screenMesh.position.y = floatY
-      notch.position.y = 1.3 + floatY
-
-      const rotY = 0.18 + mouseRef.current.x * 0.06
-      const rotX = -0.05 + mouseRef.current.y * -0.04
-
-      phoneBody.rotation.y = rotY
-      phoneBody.rotation.x = rotX
-      screenMesh.rotation.y = rotY
-      screenMesh.rotation.x = rotX
-      notch.rotation.y = rotY
-      notch.rotation.x = rotX
-
-      renderer.render(scene, camera)
-    }
-    animate()
-
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('mousemove', handleMouseMove)
-      renderer.dispose()
-      phoneTex.dispose()
-      if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement)
-    }
+    const interval = setInterval(() => {
+      const notifIdx = notifIdxRef.current % NOTIFICATIONS.length
+      notifIdxRef.current += 1
+      const newCard = { id: idRef.current, notif: NOTIFICATIONS[notifIdx], isNew: true }
+      idRef.current += 1
+      setCards((prev) => {
+        const updated = [...prev.map((c) => ({ ...c, isNew: false })), newCard]
+        return updated.slice(-3)
+      })
+    }, 3000)
+    return () => clearInterval(interval)
   }, [])
 
   return (
     <div
-      ref={mountRef}
-      style={{ width: '200px', height: '380px' }}
-      className="hidden lg:block"
-    />
+      className="hidden lg:block flex-shrink-0"
+      style={{
+        width: '280px',
+        height: '560px',
+        borderRadius: '40px',
+        border: '8px solid rgba(255,255,255,0.15)',
+        background: '#0a0f1e',
+        boxShadow: '0 0 60px rgba(59,130,246,0.3), inset 0 0 0 1px rgba(255,255,255,0.05)',
+        position: 'relative',
+        overflow: 'hidden',
+        animation: 'phoneFloat 3s ease-in-out infinite',
+      }}
+    >
+      {/* Notch */}
+      <div style={{
+        position: 'absolute', top: '12px', left: '50%', transform: 'translateX(-50%)',
+        width: '72px', height: '18px', background: '#0a0f1e',
+        borderRadius: '9px', border: '1.5px solid rgba(255,255,255,0.08)', zIndex: 2,
+      }} />
+
+      {/* Screen */}
+      <div style={{ position: 'absolute', inset: '6px', borderRadius: '35px', background: '#111827', overflow: 'hidden' }}>
+        {/* Status bar */}
+        <div style={{ background: '#161b22', padding: '26px 16px 7px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '10px', fontFamily: 'system-ui' }}>9:41</span>
+          <div style={{ width: '14px', height: '7px', background: '#3b82f6', borderRadius: '2px' }} />
+        </div>
+
+        {/* App header */}
+        <div style={{ background: '#161b22', padding: '6px 16px 10px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+          <div style={{ color: '#3b82f6', fontSize: '13px', fontWeight: '700', fontFamily: 'system-ui' }}>TBS Leads</div>
+          <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: '9px', fontFamily: 'system-ui', marginTop: '2px' }}>Live notifications</div>
+        </div>
+
+        {/* Notification stack */}
+        <div style={{ padding: '10px', display: 'flex', flexDirection: 'column', gap: '7px' }}>
+          {cards.map(({ id, notif, isNew }) => (
+            <NotifCard key={id} id={id} notif={notif} isNew={isNew} />
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }

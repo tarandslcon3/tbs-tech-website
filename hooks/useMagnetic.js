@@ -5,13 +5,19 @@ export function useMagnetic(strength = 0.3, range = 80) {
   const ref = useRef(null)
   const rafRef = useRef(null)
   const posRef = useRef({ x: 0, y: 0 })
+  const targetRef = useRef({ x: 0, y: 0 })
+  const pendingRef = useRef(false)
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
 
+    // Pre-composite layer so transforms don't trigger repaints
+    el.style.willChange = 'transform'
+
     const lerp = (a, b, t) => a + (b - a) * t
 
+    // Write target to ref, apply only inside rAF — prevents scroll jank
     const handleMouseMove = (e) => {
       const rect = el.getBoundingClientRect()
       const cx = rect.left + rect.width / 2
@@ -21,12 +27,16 @@ export function useMagnetic(strength = 0.3, range = 80) {
       const dist = Math.sqrt(dx * dx + dy * dy)
 
       if (dist < range) {
-        const tx = dx * strength
-        const ty = dy * strength
-        cancelAnimationFrame(rafRef.current)
-        posRef.current = { x: tx, y: ty }
-        el.style.transform = `translate(${tx}px, ${ty}px)`
-        el.style.transition = 'none'
+        targetRef.current = { x: dx * strength, y: dy * strength }
+        if (!pendingRef.current) {
+          pendingRef.current = true
+          requestAnimationFrame(() => {
+            el.style.transform = `translate(${targetRef.current.x}px, ${targetRef.current.y}px)`
+            el.style.transition = 'none'
+            posRef.current = { ...targetRef.current }
+            pendingRef.current = false
+          })
+        }
       }
     }
 
@@ -51,10 +61,12 @@ export function useMagnetic(strength = 0.3, range = 80) {
       rafRef.current = requestAnimationFrame(animateBack)
     }
 
-    window.addEventListener('mousemove', handleMouseMove)
+    // passive: true lets browser skip preventDefault check → no scroll jank
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     el.addEventListener('mouseleave', handleMouseLeave)
 
     return () => {
+      el.style.willChange = ''
       window.removeEventListener('mousemove', handleMouseMove)
       el.removeEventListener('mouseleave', handleMouseLeave)
       cancelAnimationFrame(rafRef.current)

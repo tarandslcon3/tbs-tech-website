@@ -20,6 +20,8 @@ const ROICalculator = dynamic(() => import('@/components/ROICalculator'), {
   loading: () => <div className="py-24 bg-[#0a0f1e]" />,
 })
 
+const SpaceTravel = dynamic(() => import('@/components/SpaceTravel'), { ssr: false })
+
 export default function Home() {
   return (
     <>
@@ -29,6 +31,7 @@ export default function Home() {
       <LoadingScreen />
       <HashScroller />
       <ScrollReveal />
+      <SpaceTravel />
       <main>
         <Nav />
         <Hero />

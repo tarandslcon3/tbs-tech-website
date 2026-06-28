@@ -1,8 +1,13 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import * as THREE from 'three'
 import dynamic from 'next/dynamic'
+import { useMagnetic } from '@/hooks/useMagnetic'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const ParticleNetwork = dynamic(() => import('@/components/ParticleNetwork'), { ssr: false })
 const DeviceMockupComponent = dynamic(() => import('@/components/DeviceMockup'), { ssr: false })
@@ -82,6 +87,21 @@ export default function Hero() {
     }
     window.addEventListener('resize', handleResize)
 
+    // GSAP ScrollTrigger — sphere exits as user scrolls 0→500px
+    const scrollTrigger = ScrollTrigger.create({
+      start: 'top top',
+      end: '500 top',
+      scrub: 1,
+      onUpdate: (self) => {
+        const p = self.progress
+        icosahedron.scale.setScalar(1 - 0.7 * p)
+        icosahedron.position.x = 3 * p
+        icoMat.opacity = 0.7 * (1 - p)
+        innerMat.opacity = 0.4 * (1 - p)
+        particles.position.y = -2 * p
+      },
+    })
+
     const clock = new THREE.Clock()
     let animId
     const origPositions = new Float32Array(icoGeo.attributes.position.array)
@@ -127,6 +147,7 @@ export default function Hero() {
 
     return () => {
       cancelAnimationFrame(animId)
+      scrollTrigger.kill()
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
@@ -135,6 +156,15 @@ export default function Hero() {
       innerGeo.dispose(); innerMat.dispose()
       particleGeo.dispose(); particleMat.dispose()
     }
+  }, [])
+
+  const magDemoRef = useMagnetic()
+  const magCalcRef = useMagnetic()
+
+  const [headlineReady, setHeadlineReady] = useState(false)
+  useEffect(() => {
+    const t = setTimeout(() => setHeadlineReady(true), 50)
+    return () => clearTimeout(t)
   }, [])
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -165,15 +195,33 @@ export default function Hero() {
             AI Websites & Automation for Any Business
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight"
-          >
-            Your Phone Should Be{' '}
-            <span className="gradient-text">Ringing Non-Stop</span>
-          </motion.h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+            {['Your', 'Phone', 'Should', 'Be'].map((word, i) => (
+              <span key={word} style={{ display: 'inline-block', overflow: 'hidden', marginRight: '0.28em' }}>
+                <span style={{
+                  display: 'inline-block',
+                  transform: headlineReady ? 'translateY(0)' : 'translateY(110%)',
+                  opacity: headlineReady ? 1 : 0,
+                  transition: `transform 0.7s cubic-bezier(0.16,1,0.3,1) ${300 + i * 80}ms, opacity 0.5s ease ${300 + i * 80}ms`,
+                }}>
+                  {word}
+                </span>
+              </span>
+            ))}
+            <br className="hidden sm:block" />
+            {['Ringing', 'Non-Stop'].map((word, i) => (
+              <span key={word} style={{ display: 'inline-block', overflow: 'hidden', marginRight: i === 0 ? '0.28em' : 0 }}>
+                <span className="gradient-text" style={{
+                  display: 'inline-block',
+                  transform: headlineReady ? 'translateY(0)' : 'translateY(110%)',
+                  opacity: headlineReady ? 1 : 0,
+                  transition: `transform 0.7s cubic-bezier(0.16,1,0.3,1) ${300 + (4 + i) * 80}ms, opacity 0.5s ease ${300 + (4 + i) * 80}ms`,
+                }}>
+                  {word}
+                </span>
+              </span>
+            ))}
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -190,18 +238,22 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <button
-              onClick={() => scrollTo('contact')}
-              className="px-8 py-4 bg-[#3b82f6] text-white font-bold rounded-xl hover:bg-blue-500 transition-all duration-200 text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
-            >
-              Get a Free Demo
-            </button>
-            <a
-              href="/calculator"
-              className="px-8 py-4 border-2 border-white/30 text-white font-bold rounded-xl hover:border-white hover:bg-white/5 transition-all duration-200 text-lg backdrop-blur-sm"
-            >
-              Calculate Your Leaks
-            </a>
+            <div ref={magDemoRef} className="inline-block">
+              <button
+                onClick={() => scrollTo('contact')}
+                className="px-8 py-4 bg-[#3b82f6] text-white font-bold rounded-xl hover:bg-blue-500 transition-colors duration-200 text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40"
+              >
+                Get a Free Demo
+              </button>
+            </div>
+            <div ref={magCalcRef} className="inline-block">
+              <a
+                href="/calculator"
+                className="inline-block px-8 py-4 border-2 border-white/30 text-white font-bold rounded-xl hover:border-white hover:bg-white/5 transition-all duration-200 text-lg backdrop-blur-sm"
+              >
+                Calculate Your Leaks
+              </a>
+            </div>
           </motion.div>
         </div>
 

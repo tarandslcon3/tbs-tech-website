@@ -1,8 +1,11 @@
 'use client'
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { Bot, Zap, MessageSquare, TrendingUp, Star, Wrench, Check } from 'lucide-react'
+
+const ServiceScene = dynamic(() => import('@/components/ServiceScene'), { ssr: false })
 
 const services = [
   {
@@ -49,7 +52,7 @@ const services = [
   },
 ]
 
-function ServiceCard({ service, index }) {
+function ServiceCard({ service, index, onClick }) {
   const { ref: revealRef, isVisible } = useScrollReveal()
   const cardRef = useRef(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
@@ -85,6 +88,7 @@ function ServiceCard({ service, index }) {
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
+        onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => { setTilt({ x: 0, y: 0 }); setIsHovered(false) }}
         style={{
@@ -96,8 +100,9 @@ function ServiceCard({ service, index }) {
           height: '100%',
           position: 'relative',
           overflow: 'hidden',
+          cursor: 'pointer',
         }}
-        className="glass-card rounded-2xl p-8 cursor-default"
+        className="glass-card rounded-2xl p-8"
       >
         {/* Glass shine overlay */}
         <div
@@ -134,7 +139,13 @@ function ServiceCard({ service, index }) {
 }
 
 export default function Services() {
+  const [selectedService, setSelectedService] = useState(null)
+
   return (
+    <>
+    {selectedService && (
+      <ServiceScene service={selectedService} onClose={() => setSelectedService(null)} />
+    )}
     <section id="services" className="py-24 px-4 bg-[#060b18]">
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -160,10 +171,11 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <ServiceCard key={i} service={service} index={i} />
+            <ServiceCard key={i} service={service} index={i} onClick={() => setSelectedService(service)} />
           ))}
         </div>
       </div>
     </section>
+    </>
   )
 }

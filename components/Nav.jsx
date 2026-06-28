@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useMagnetic } from '@/hooks/useMagnetic'
 
 export default function Nav() {
   const [visible, setVisible] = useState(false)
@@ -24,6 +25,7 @@ export default function Nav() {
     }
   }
 
+  const magNavRef = useMagnetic()
   const isActive = (path) => pathname === path || pathname.startsWith(path + '/')
 
   return (
@@ -73,12 +75,14 @@ export default function Nav() {
             >
               Blog
             </Link>
-            <button
-              onClick={() => scrollTo('contact')}
-              className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm"
-            >
-              Get Free Demo
-            </button>
+            <div ref={magNavRef} className="inline-block">
+              <button
+                onClick={() => scrollTo('contact')}
+                className="px-5 py-2 bg-[#3b82f6] text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors text-sm"
+              >
+                Get Free Demo
+              </button>
+            </div>
           </div>
 
           <button

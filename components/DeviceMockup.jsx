@@ -2,94 +2,98 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
-function buildScreenTexture() {
-  const tex = document.createElement('canvas')
-  tex.width = 512
-  tex.height = 320
-  const c = tex.getContext('2d')
+const NOTIFICATIONS = [
+  { emoji: '📱', title: 'New Lead', body: "Mike's HVAC — Quote request $2,400" },
+  { emoji: '📱', title: 'New Lead', body: "Sarah's Plumbing — Emergency repair $800" },
+  { emoji: '✅', title: 'Booking Confirmed', body: 'James Roofing — $3,200 job booked' },
+  { emoji: '📱', title: 'New Lead', body: 'Downtown Restaurant — Website redesign' },
+]
+
+function drawPhone(ctx, W, H, notifIndex, slideProgress) {
+  ctx.clearRect(0, 0, W, H)
 
   // Background
-  c.fillStyle = '#0a0f1e'
-  c.fillRect(0, 0, 512, 320)
+  ctx.fillStyle = '#0d1117'
+  ctx.fillRect(0, 0, W, H)
 
-  // Nav bar
-  c.fillStyle = '#0f172a'
-  c.fillRect(0, 0, 512, 30)
-  c.fillStyle = '#3b82f6'
-  c.fillRect(12, 9, 56, 12)
-  c.fillStyle = '#1e293b'
-  c.fillRect(360, 9, 36, 12)
-  c.fillRect(402, 9, 36, 12)
-  c.fillStyle = '#3b82f6'
-  c.fillRect(448, 7, 52, 16)
-  c.fillStyle = '#ffffff'
-  c.font = 'bold 8px sans-serif'
-  c.fillText('Demo', 456, 19)
+  // Status bar
+  ctx.fillStyle = '#161b22'
+  ctx.fillRect(0, 0, W, 32)
+  ctx.fillStyle = 'rgba(255,255,255,0.6)'
+  ctx.font = '10px sans-serif'
+  ctx.fillText('9:41', 14, 22)
+  ctx.fillStyle = '#3b82f6'
+  ctx.fillRect(W - 18, 11, 12, 10)
 
-  // Hero headline
-  c.fillStyle = '#ffffff'
-  c.fillRect(20, 50, 220, 11)
-  c.fillRect(20, 67, 160, 9)
-  c.fillStyle = 'rgba(59,130,246,0.25)'
-  c.fillRect(20, 82, 190, 8)
+  // App header
+  ctx.fillStyle = '#161b22'
+  ctx.fillRect(0, 32, W, 44)
+  ctx.fillStyle = '#3b82f6'
+  ctx.font = 'bold 13px sans-serif'
+  ctx.fillText('TBS Leads', 14, 58)
+  ctx.fillStyle = 'rgba(255,255,255,0.35)'
+  ctx.font = '9px sans-serif'
+  ctx.fillText('Live notifications', 14, 72)
 
-  // CTA button
-  c.fillStyle = '#3b82f6'
-  c.beginPath()
-  c.roundRect(20, 100, 96, 22, 5)
-  c.fill()
-  c.fillStyle = '#ffffff'
-  c.font = '7.5px sans-serif'
-  c.fillText('Get Free Demo', 27, 115)
+  const NOTIF_H = 76
+  const GAP = 8
+  const startY = 84
 
-  // Divider
-  c.fillStyle = '#1e2a4a'
-  c.fillRect(0, 132, 512, 1)
+  // Previous notifications (static)
+  for (let i = 0; i < notifIndex; i++) {
+    const y = startY + i * (NOTIF_H + GAP)
+    if (y + NOTIF_H > H - 10) break
+    drawNotifCard(ctx, W, y, NOTIFICATIONS[i % NOTIFICATIONS.length], 1)
+  }
 
-  // Section label
-  c.fillStyle = '#6b7280'
-  c.font = '7px sans-serif'
-  c.fillText('SERVICES', 20, 148)
+  // Current notification — slides in from below
+  const eased = 1 - Math.pow(1 - slideProgress, 3)
+  const currentY = startY + notifIndex * (NOTIF_H + GAP) + (1 - eased) * 80
+  if (currentY < H - 10) {
+    drawNotifCard(ctx, W, currentY, NOTIFICATIONS[notifIndex % NOTIFICATIONS.length], Math.min(1, slideProgress * 2))
+  }
+}
 
-  // Service cards
-  const colors = ['#3b82f6', '#06b6d4', '#8b5cf6']
-  colors.forEach((color, i) => {
-    const x = 12 + i * 162
-    c.fillStyle = 'rgba(255,255,255,0.04)'
-    c.beginPath()
-    c.roundRect(x, 156, 152, 96, 7)
-    c.fill()
-    c.strokeStyle = 'rgba(255,255,255,0.07)'
-    c.lineWidth = 0.5
-    c.stroke()
+function drawNotifCard(ctx, W, y, notif, alpha) {
+  const NOTIF_H = 76
+  ctx.globalAlpha = alpha
 
-    // Icon bg
-    c.fillStyle = color + '25'
-    c.beginPath()
-    c.roundRect(x + 10, 164, 22, 22, 4)
-    c.fill()
-    c.fillStyle = color
-    c.fillRect(x + 15, 171, 12, 8)
+  ctx.fillStyle = '#1a1f36'
+  ctx.beginPath()
+  if (ctx.roundRect) {
+    ctx.roundRect(10, y, W - 20, NOTIF_H, 8)
+  } else {
+    ctx.rect(10, y, W - 20, NOTIF_H)
+  }
+  ctx.fill()
 
-    // Title
-    c.fillStyle = '#ffffff'
-    c.fillRect(x + 10, 194, 88, 7)
-    // Body text lines
-    c.fillStyle = '#4b5563'
-    c.fillRect(x + 10, 207, 120, 4)
-    c.fillRect(x + 10, 216, 100, 4)
-    c.fillRect(x + 10, 225, 112, 4)
-    c.fillRect(x + 10, 234, 80, 4)
-  })
+  // Blue left accent bar
+  ctx.fillStyle = '#3b82f6'
+  ctx.fillRect(10, y, 4, NOTIF_H)
 
-  // Glow overlay
-  const grad = c.createRadialGradient(256, 160, 0, 256, 160, 280)
-  grad.addColorStop(0, 'rgba(59,130,246,0.06)')
-  grad.addColorStop(1, 'transparent')
-  c.fillStyle = grad
-  c.fillRect(0, 0, 512, 320)
+  // Emoji
+  ctx.font = '16px sans-serif'
+  ctx.fillText(notif.emoji, 24, y + 28)
 
-  return tex
+  // Title
+  ctx.fillStyle = '#ffffff'
+  ctx.font = 'bold 11px sans-serif'
+  ctx.fillText(notif.title, 48, y + 26)
+
+  // Body text
+  ctx.fillStyle = 'rgba(255,255,255,0.55)'
+  ctx.font = '9.5px sans-serif'
+  const words = notif.body.split(' ')
+  let line = ''; let lineY = y + 42
+  for (const w of words) {
+    const test = line + w + ' '
+    if (ctx.measureText(test).width > W - 68 && line !== '') {
+      ctx.fillText(line, 48, lineY); line = w + ' '; lineY += 13
+    } else { line = test }
+  }
+  ctx.fillText(line, 48, lineY)
+
+  ctx.globalAlpha = 1
 }
 
 export default function DeviceMockup() {
@@ -100,8 +104,8 @@ export default function DeviceMockup() {
     const mount = mountRef.current
     if (!mount) return
 
-    const W = mount.clientWidth || 420
-    const H = mount.clientHeight || 320
+    const W = mount.clientWidth || 200
+    const H = mount.clientHeight || 380
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setSize(W, H)
@@ -110,61 +114,43 @@ export default function DeviceMockup() {
 
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 100)
-    camera.position.set(0, 0.6, 5)
-    camera.lookAt(0, 0.3, 0)
+    camera.position.set(0, 0, 5)
 
-    // Lights
-    scene.add(new THREE.AmbientLight(0xffffff, 0.7))
-    const blueLight = new THREE.PointLight(0x3b82f6, 3, 12)
-    blueLight.position.set(3, 3, 3)
+    scene.add(new THREE.AmbientLight(0xffffff, 0.6))
+    const blueLight = new THREE.PointLight(0x3b82f6, 2, 10)
+    blueLight.position.set(2, 2, 3)
     scene.add(blueLight)
-    const cyanLight = new THREE.PointLight(0x06b6d4, 1.5, 10)
-    cyanLight.position.set(-3, -1, 2)
-    scene.add(cyanLight)
 
-    const laptop = new THREE.Group()
-    scene.add(laptop)
+    // Phone body
+    const phoneMat = new THREE.MeshPhongMaterial({ color: 0x0d1117, shininess: 120 })
+    const phoneBody = new THREE.Mesh(new THREE.BoxGeometry(1.4, 2.8, 0.12), phoneMat)
+    scene.add(phoneBody)
 
-    // Base body
-    const baseMat = new THREE.MeshPhongMaterial({ color: 0x1a1f36, shininess: 100 })
-    const base = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.18, 2.1), baseMat)
-    base.position.set(0, 0, 0)
-    laptop.add(base)
+    // Screen canvas texture
+    const CANVAS_W = 220, CANVAS_H = 440
+    const texCanvas = document.createElement('canvas')
+    texCanvas.width = CANVAS_W
+    texCanvas.height = CANVAS_H
+    const texCtx = texCanvas.getContext('2d')
+    const phoneTex = new THREE.CanvasTexture(texCanvas)
 
-    // Keyboard detail strip
-    const keyMat = new THREE.MeshPhongMaterial({ color: 0x111827, shininess: 40 })
-    const keys = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.02, 1.4), keyMat)
-    keys.position.set(0, 0.1, 0.1)
-    laptop.add(keys)
+    const screenMat = new THREE.MeshBasicMaterial({ map: phoneTex })
+    const screenMesh = new THREE.Mesh(new THREE.PlaneGeometry(1.22, 2.56), screenMat)
+    screenMesh.position.z = 0.065
+    scene.add(screenMesh)
 
-    // Screen frame
-    const frameMat = new THREE.MeshPhongMaterial({ color: 0x1a1f36, shininess: 100 })
-    const screenFrame = new THREE.Mesh(new THREE.BoxGeometry(3.2, 2.1, 0.1), frameMat)
-    screenFrame.position.set(0, 1.22, -1.0)
-    screenFrame.rotation.x = -0.18
-    laptop.add(screenFrame)
+    // Notch
+    const notchMat = new THREE.MeshBasicMaterial({ color: 0x0d1117 })
+    const notch = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.07, 0.01), notchMat)
+    notch.position.set(0, 1.3, 0.07)
+    scene.add(notch)
 
-    // Screen display with canvas texture
-    const texCanvas = buildScreenTexture()
-    const screenTex = new THREE.CanvasTexture(texCanvas)
-    const screenMat = new THREE.MeshBasicMaterial({ map: screenTex })
-    const screen = new THREE.Mesh(new THREE.BoxGeometry(2.85, 1.85, 0.01), screenMat)
-    screen.position.set(0, 1.22, -0.94)
-    screen.rotation.x = -0.18
-    laptop.add(screen)
-
-    // Subtle screen glow plane
-    const glowMat = new THREE.MeshBasicMaterial({
-      color: 0x3b82f6,
-      transparent: true,
-      opacity: 0.05,
-    })
-    const glowPlane = new THREE.Mesh(new THREE.PlaneGeometry(2.85, 1.85), glowMat)
-    glowPlane.position.set(0, 1.22, -0.87)
-    glowPlane.rotation.x = -0.18
-    laptop.add(glowPlane)
-
-    laptop.rotation.y = 0.28
+    // Notification animation state
+    let notifIndex = 0
+    let slideProgress = 0
+    let lastChange = Date.now()
+    const SLIDE_DURATION = 600
+    const HOLD_DURATION = 2800
 
     const handleMouseMove = (e) => {
       mouseRef.current.x = (e.clientX / window.innerWidth - 0.5) * 2
@@ -175,10 +161,40 @@ export default function DeviceMockup() {
     let animId
     const animate = () => {
       animId = requestAnimationFrame(animate)
+      const now = Date.now()
+      const elapsed = now - lastChange
+
+      if (elapsed < SLIDE_DURATION) {
+        slideProgress = elapsed / SLIDE_DURATION
+      } else {
+        slideProgress = 1
+        if (elapsed > SLIDE_DURATION + HOLD_DURATION) {
+          notifIndex = (notifIndex + 1) % NOTIFICATIONS.length
+          slideProgress = 0
+          lastChange = now
+        }
+      }
+
+      drawPhone(texCtx, CANVAS_W, CANVAS_H, notifIndex, slideProgress)
+      phoneTex.needsUpdate = true
+
       const t = Date.now() * 0.001
-      laptop.position.y = Math.sin(t * 0.9) * 0.1
-      laptop.rotation.y = 0.28 + Math.sin(t * 0.25) * 0.08 + mouseRef.current.x * 0.07
-      laptop.rotation.x = mouseRef.current.y * 0.04
+      const floatY = Math.sin(t * 0.8) * 0.08
+
+      phoneBody.position.y = floatY
+      screenMesh.position.y = floatY
+      notch.position.y = 1.3 + floatY
+
+      const rotY = 0.18 + mouseRef.current.x * 0.06
+      const rotX = -0.05 + mouseRef.current.y * -0.04
+
+      phoneBody.rotation.y = rotY
+      phoneBody.rotation.x = rotX
+      screenMesh.rotation.y = rotY
+      screenMesh.rotation.x = rotX
+      notch.rotation.y = rotY
+      notch.rotation.x = rotX
+
       renderer.render(scene, camera)
     }
     animate()
@@ -187,6 +203,7 @@ export default function DeviceMockup() {
       cancelAnimationFrame(animId)
       window.removeEventListener('mousemove', handleMouseMove)
       renderer.dispose()
+      phoneTex.dispose()
       if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement)
     }
   }, [])
@@ -194,7 +211,7 @@ export default function DeviceMockup() {
   return (
     <div
       ref={mountRef}
-      style={{ width: '420px', height: '320px' }}
+      style={{ width: '200px', height: '380px' }}
       className="hidden lg:block"
     />
   )

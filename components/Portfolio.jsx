@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
@@ -33,8 +33,47 @@ const cases = [
   },
 ]
 
+function parseStatValue(value) {
+  if (value.startsWith('#')) return { prefix: '#', target: parseInt(value.slice(1)), suffix: '' }
+  if (value.endsWith('+')) return { prefix: '', target: parseInt(value), suffix: '+' }
+  if (value.endsWith('%')) return { prefix: '', target: parseInt(value), suffix: '%' }
+  if (value.endsWith('min')) return { prefix: '', target: parseInt(value), suffix: 'min' }
+  return { prefix: '', target: parseInt(value) || 0, suffix: '' }
+}
+
+function CountUp({ value, isVisible, color }) {
+  const { prefix, target, suffix } = parseStatValue(value)
+  const [count, setCount] = useState(0)
+  const hasRun = useRef(false)
+
+  useEffect(() => {
+    if (!isVisible || hasRun.current || target === 0) return
+    hasRun.current = true
+    const duration = 1200
+    const startTime = Date.now()
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - startTime
+      if (elapsed >= duration) {
+        setCount(target)
+        clearInterval(interval)
+        return
+      }
+      const progress = elapsed / duration
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCount(Math.round(target * eased))
+    }, 16)
+    return () => clearInterval(interval)
+  }, [isVisible, target])
+
+  return (
+    <div className="text-2xl font-black" style={{ color }}>
+      {prefix}{count}{suffix}
+    </div>
+  )
+}
+
 function CaseCard({ item, index }) {
-  const { ref: revealRef, isVisible } = useScrollReveal()
+  const { ref: revealRef, isVisible } = useScrollReveal({ threshold: 0.3 })
   const cardRef = useRef(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
@@ -81,12 +120,12 @@ function CaseCard({ item, index }) {
         <p className="text-gray-400 text-sm leading-relaxed mb-8">{item.detail}</p>
         <div className="flex gap-6">
           <div>
-            <div className="text-2xl font-black" style={{ color: item.color }}>{item.stat1.value}</div>
+            <CountUp value={item.stat1.value} isVisible={isVisible} color={item.color} />
             <div className="text-gray-500 text-xs mt-1">{item.stat1.label}</div>
           </div>
           <div className="w-px bg-white/10" />
           <div>
-            <div className="text-2xl font-black" style={{ color: item.color }}>{item.stat2.value}</div>
+            <CountUp value={item.stat2.value} isVisible={isVisible} color={item.color} />
             <div className="text-gray-500 text-xs mt-1">{item.stat2.label}</div>
           </div>
         </div>
@@ -120,7 +159,7 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cases.map((item, i) => (
             <CaseCard key={i} item={item} index={i} />
           ))}

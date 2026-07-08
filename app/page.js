@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 import LoadingScreen from '@/components/LoadingScreen'
 import ChatBot from '@/components/ChatBot'
 import HashScroller from '@/components/HashScroller'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const Hero = dynamic(() => import('@/components/Hero'), {
   ssr: false,
@@ -27,14 +28,24 @@ export default function Home() {
       <div className="orb orb-3" />
       <LoadingScreen />
       <HashScroller />
+      <ScrollReveal />
       <main>
         <Nav />
         <Hero />
-        <Services />
-        <Portfolio />
-        <Testimonials />
+        <div className="reveal-3d">
+          <Services />
+        </div>
+        <div className="reveal-3d">
+          <Portfolio />
+        </div>
+        <div className="reveal-3d">
+          <Testimonials />
+        </div>
         <ROICalculator />
-        <ContactForm />
+        <div className="reveal-3d relative overflow-hidden">
+          <div className="blob-bg" aria-hidden="true" />
+          <ContactForm />
+        </div>
         <Footer />
       </main>
       <ChatBot />

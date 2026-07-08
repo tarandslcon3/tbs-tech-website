@@ -164,6 +164,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
+        <div className="grain-overlay" aria-hidden="true" />
         <ScrollLine />
         {children}
         <Script

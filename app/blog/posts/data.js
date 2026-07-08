@@ -656,6 +656,8 @@ export const posts = [
   },
 ]
 
+posts.sort((a, b) => new Date(b.date) - new Date(a.date))
+
 export function getPostBySlug(slug) {
   return posts.find((p) => p.slug === slug) || null
 }

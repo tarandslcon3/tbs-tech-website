@@ -1,5 +1,128 @@
 export const posts = [
   {
+    slug: 'how-to-set-up-google-business-profile-2026',
+    title: 'How to Set Up Google Business Profile in 2026 — Step by Step',
+    metaTitle: 'How to Set Up Google Business Profile 2026',
+    metaDescription:
+      'Complete step-by-step guide to setting up Google Business Profile in 2026. Get your business on Google Maps and into local search results for free.',
+    date: '2026-06-28',
+    readTime: '9 min read',
+    featuredColor: '#4285f4',
+    excerpt:
+      'Your business is invisible on Google Maps right now — and you probably have no idea. Here is the complete 2026 guide to fixing that for free in under 30 minutes.',
+    content: `
+<p>Most small business owners pour money into a website, social media posts, and sometimes even paid ads — and still wonder why the phone is quiet. The answer, more often than not, is that their Google Business Profile is either unclaimed, half-finished, or does not exist at all. This one free tool is what puts your business on Google Maps, in the local search results above the regular website listings, and in front of people who are actively looking to buy right now. This guide walks you through setting it up completely in 2026, including the new video verification process Google rolled out this year.</p>
+
+<h2>Why Most Small Businesses Are Invisible on Google</h2>
+<p>When someone searches "plumber near me" or "best accountant in [city]," the first thing they see is not a list of websites. They see a map with three business listings. That map pack — as it is called — gets more clicks than everything below it. It is prime real estate, and it is free. But to appear there, you need a verified, optimised Google Business Profile.</p>
+<p>The problem is that most small business owners either never knew this existed, set it up halfway and forgot about it, or assumed their website handled this automatically. It does not. Your website and your Google Business Profile are completely separate things that work together. One without the other leaves significant visibility on the table.</p>
+<p>In 2026, this matters even more because AI assistants — ChatGPT, Google AI Overviews, Perplexity — now pull local business recommendations directly from Google Business Profile data. If your profile is weak or missing, you get skipped by both human searchers and AI recommendations.</p>
+
+<h2>What You Need Before You Start</h2>
+<p>Before opening the setup process, have these ready:</p>
+<ul>
+  <li>A Google account you want to associate with the business (ideally a dedicated business Gmail, not your personal one)</li>
+  <li>Your exact business name — must match your website and any other online listings exactly</li>
+  <li>Your business phone number</li>
+  <li>Your website URL</li>
+  <li>Your service area or physical address</li>
+  <li>A short business description (you will write this during setup)</li>
+  <li>For video verification in 2026: access to your business location or signage to record a short video</li>
+</ul>
+
+<h2>Step-by-Step Setup</h2>
+
+<h3>Step 1 — Go to business.google.com</h3>
+<p>Open your browser and go to <strong>business.google.com</strong>. Sign in with the Google account you want to use for your business. If you do not have one, create a new Google account first — use a business-specific Gmail address if possible so your personal account stays separate.</p>
+<p>Click the button that says "Manage now" or "Add your business to Google." Google will first check whether a listing for your business already exists in their database. Many businesses already have an unclaimed listing created by Google from data it found online. If yours appears in the search, click "Claim this business" rather than creating a new one.</p>
+
+<h3>Step 2 — Enter your exact business name</h3>
+<p>Type your business name exactly as it appears on your website, your invoices, and your other online accounts. This consistency matters — Google uses it to match your profile with information it finds about your business elsewhere on the internet. Do not add keywords to your business name here (for example, do not type "Smith Plumbing — Best Emergency Plumber"). Google's guidelines prohibit this and it can get your listing suspended.</p>
+
+<h3>Step 3 — Choose your primary business category</h3>
+<p>This is one of the most important decisions in the entire setup. Your primary category tells Google what type of business you are, and it controls which local searches your listing is eligible to appear in. Type keywords that describe what you do and Google will suggest matching categories. Pick the most specific, accurate match — "HVAC contractor" rather than just "contractor," for example.</p>
+<p>You can add secondary categories later. For now, get your primary category exactly right. If you are unsure, search Google for a competitor whose listing appears in the map pack for your target keywords, and check what category they used by looking at their profile.</p>
+
+<h3>Step 4 — Set your business location type</h3>
+<p>Google will ask how customers interact with your business. You have three options:</p>
+<ul>
+  <li>You have a physical location customers can visit (shop, office, clinic)</li>
+  <li>You visit or deliver to customers (service area business — plumbers, electricians, cleaners)</li>
+  <li>Both</li>
+</ul>
+<p>If you are a service area business with no walk-in location, select the second option and define your service area by city, region, or postcode. You will not need to display a physical address. If you have a shop or office, enter your full address exactly as it appears on your website.</p>
+
+<h3>Step 5 — Add your contact details</h3>
+<p>Enter your business phone number and your website URL. Double-check both carefully. The phone number here is what appears on your Google Maps listing — make sure it is the number you actually answer. If you use a tracking number for marketing, use that here so you can measure calls from Google.</p>
+
+<h3>Step 6 — Verify your listing</h3>
+<p>In 2026, Google's default verification method for most new listings is <strong>video verification</strong>. You record a short continuous video — typically 1 to 2 minutes — that shows all three of the following:</p>
+<ul>
+  <li>Your business signage or location (exterior or interior)</li>
+  <li>Proof that you are the business owner (showing equipment, products, or your service in action)</li>
+  <li>A live action inside your Google Business Profile dashboard while filming</li>
+</ul>
+<p>You record this directly in the Google Business app on your phone and submit it for Google to review. Verification typically completes within a few days. Until your listing is verified, it will not appear publicly in search results.</p>
+<p>Other verification options that may be offered depending on your business type: postcard by mail (takes 3 to 12 days), phone verification, email verification, or instant verification if your business is already connected to Google Search Console or Google Ads.</p>
+
+<h3>Step 7 — Complete your business profile fully</h3>
+<p>Once verified, do not stop at the basics. A half-filled profile ranks lower and converts fewer visitors. Complete every section:</p>
+<ul>
+  <li><strong>Business description:</strong> Write 250 to 750 characters describing what you do, who you help, and what makes you different. Include your primary service keywords naturally — do not stuff them.</li>
+  <li><strong>Services or products:</strong> List every service you offer with a name and description. This helps Google match you to more specific search queries.</li>
+  <li><strong>Hours:</strong> Add your actual opening hours. Update them for holidays. Stale hours are a trust signal that hurts you.</li>
+  <li><strong>Photos:</strong> Upload a minimum of 10 high-quality photos. Include your exterior (so customers can find you), interior, team, and examples of your work or products. Businesses with photos get significantly more direction requests and website clicks than those without.</li>
+  <li><strong>Attributes:</strong> Google offers additional attributes like "women-owned," "veteran-owned," "online appointments," "free Wi-Fi." Add every one that applies.</li>
+</ul>
+
+<h3>Step 8 — Get your first reviews</h3>
+<p>Reviews are the single biggest factor in whether your listing ranks in the local map pack. After verifying, share your Google review link with your 5 to 10 most satisfied existing customers and ask them directly to leave an honest review. Your Google review link looks like: <strong>g.page/[your-business-name]/review</strong> — you can find it in your Google Business Profile dashboard under "Get more reviews."</p>
+<p>Respond to every review you receive, positive or negative. Google treats engagement with your reviews as a ranking signal. A business that responds to reviews consistently ranks higher than one that ignores them.</p>
+
+<h3>Step 9 — Post regularly to your profile</h3>
+<p>Google Business Profile has a Posts feature that works like a mini social media feed. Publishing one post per week — a tip, an offer, a photo of recent work, or an announcement — keeps your profile active. Google's algorithm favors active profiles over dormant ones. Each post can include a call-to-action button linking to your website or booking page.</p>
+
+<h2>Common Mistakes to Avoid</h2>
+<ul>
+  <li><strong>Using a different name, address or phone on your profile than on your website.</strong> Inconsistency between your Google Business Profile and your website confuses Google and hurts your local ranking. These must match exactly everywhere — your site, your profile, your Yelp listing, your Facebook page, every directory.</li>
+  <li><strong>Adding keywords to your business name.</strong> "Smith Plumbing — Best Emergency Plumber 24/7" violates Google's guidelines and risks suspension of your entire listing.</li>
+  <li><strong>Setting up the profile and never returning to it.</strong> A profile with no recent posts, no new photos, and no review responses signals to Google that the business may no longer be active. Check and update your profile at least once a month.</li>
+  <li><strong>Ignoring negative reviews.</strong> A negative review with no response looks worse than the review itself. A professional, calm reply shows potential customers that you take your reputation seriously.</li>
+  <li><strong>Not adding a service area if you are a mobile business.</strong> Without a defined service area, Google cannot show you for searches in the areas you actually serve.</li>
+  <li><strong>Using a PO box or virtual office address as your business address.</strong> Google does not allow PO boxes and sometimes suspends listings that use virtual offices. If you work from home and prefer not to show your address, use the service area option instead.</li>
+</ul>
+
+<h2>When to Hire a Professional Instead of DIY</h2>
+<p>Setting up a Google Business Profile yourself is completely doable in under an hour. The DIY path makes total sense if you are a sole trader or small business with one location, straightforward services, and the time to maintain it monthly.</p>
+<p>However, there are situations where professional help pays off quickly:</p>
+<ul>
+  <li>Your listing was previously suspended and you cannot get it reinstated</li>
+  <li>You have multiple locations that all need separate profiles</li>
+  <li>You are in a highly competitive category where appearing in the map pack requires more than just a complete profile</li>
+  <li>You want your Google Business Profile integrated with your website, booking system, and review automation from day one</li>
+</ul>
+<p>TBS Tech Services sets up and optimises Google Business Profiles as part of our website packages — connected to automated review requests, booking links, and your site's local SEO structure so everything works together. <a href="/#contact">Get a free consultation</a> and we will tell you exactly what your current profile is missing.</p>
+<p>You can also use our <a href="/calculator">free Business Leak Calculator</a> to estimate how many leads your missing or incomplete Google presence is costing you every month.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is Google Business Profile free to set up?</h3>
+<p>Yes, completely free. Creating, claiming, and optimising your Google Business Profile costs nothing. Google does not charge for your listing to appear in Maps or local search results. The only costs are your time to set it up and maintain it. Some businesses pay an SEO professional to optimise and manage their profile, but the profile itself has no fees.</p>
+
+<h3>How long does it take for my Google Business Profile to show up?</h3>
+<p>Once your listing is verified, it typically becomes visible in Google Search and Google Maps within 1 to 3 days. However, newly verified profiles often rank lower at first. It can take 4 to 8 weeks of regular activity — posts, reviews, and profile completion — before your listing consistently appears in the top three map results for competitive search terms. Stick with it. The results compound over time.</p>
+
+<h3>What is video verification and how does it work in 2026?</h3>
+<p>Video verification is Google's default method for verifying new business listings in 2026. You record a continuous video — typically 1 to 2 minutes — using the Google Maps or Google Business app on your phone. The video must show your signage or business exterior, evidence of your operations or products, and a live action inside your Google Business Profile dashboard. You submit the video through the app and Google reviews it within a few days. If your business qualifies for postcard or phone verification instead, those remain available as alternatives.</p>
+
+<h3>Can I have a Google Business Profile if I work from home?</h3>
+<p>Yes. If you work from home and serve customers at their location or online, select "service area business" during setup. This lets you define the geographic area you serve without displaying your home address publicly. Your listing will still appear in Google Maps and local search results for your service area. You just will not have a pin on the map at a specific address.</p>
+
+<h3>What happens if my Google Business Profile gets suspended?</h3>
+<p>A suspended listing disappears from Google Search and Maps completely. Common suspension reasons include adding keywords to your business name, using a PO box or virtual office address, creating duplicate listings, or sudden category changes that Google flags as suspicious. To reinstate a suspended listing, you submit a reinstatement request through the Google Business Profile Help Centre, explain what was wrong, correct the issue, and wait for Google's review — which can take 2 to 5 business days. Suspensions are avoidable if you follow Google's guidelines from the start.</p>
+    `,
+  },
+  {
     slug: 'how-to-build-a-website-for-your-small-business-free-guide-2026',
     title: 'How to Build a Small Business Website in 2026 — The Honest Guide',
     metaTitle: 'How to Build a Small Business Website in 2026',
@@ -420,6 +543,115 @@ export const posts = [
 <h2>How to Get Started</h2>
 <p>The fastest way to implement AI automation for a trades business is to start with a website built to support it — one that has lead capture, instant notifications, and the ability to connect to automation tools from day one. Most template websites cannot do this without significant modification.</p>
 <p><a href="/#contact">Get a free demo</a> and see exactly what AI automation could look like for your specific business. We build it before you spend anything.</p>
+    `,
+  },
+  {
+    slug: 'why-chatgpt-recommends-your-competitors',
+    title: 'Why ChatGPT Keeps Recommending Your Competitors (And How to Fix It)',
+    metaTitle: 'Why ChatGPT Recommends Competitors Not You',
+    metaDescription:
+      'ChatGPT and AI assistants skip your business and recommend competitors instead. Here is why it happens and how to fix it yourself for free.',
+    date: '2026-07-08',
+    readTime: '8 min read',
+    featuredColor: '#8b5cf6',
+    excerpt:
+      'You searched for your own service in ChatGPT and your competitors came up instead of you. This is not random — there is a specific reason it happens, and there are concrete steps you can take to fix it.',
+    content: `
+<p>You open ChatGPT and type something like "best website agency for small businesses" or "who can help me set up AI automation for my plumbing company." Names come back — but yours is not one of them. Your competitor from across town shows up. A business you know is smaller than yours. Businesses you have never even heard of. Not you.</p>
+<p>This is not a glitch. ChatGPT and other AI assistants like Perplexity and Google AI Overviews are making deliberate decisions about which businesses to recommend based on specific signals they find — or cannot find — about your business. Understanding those signals is the first step to showing up in AI recommendations. This guide walks through exactly why you are being skipped and what you can do about it.</p>
+
+<h2>Why AI Assistants Skip Your Business</h2>
+<p>ChatGPT does not have a live internet connection by default, but it was trained on an enormous amount of web content — business directories, review sites, forums, blog posts, company websites, and more. When someone asks it to recommend a business, it draws on the signals it absorbed during that training. More importantly, AI tools with web access (like Perplexity, Google AI Overviews, and ChatGPT with browsing turned on) actively crawl and read the web to find the most credible answer.</p>
+<p>In both cases, they are looking for the same things: clear information about what your business does, evidence that real people have used and recommended it, consistent mentions across multiple sources, and structured content that is easy for a machine to understand. Most small business websites provide none of this. They have a homepage with vague copy, no blog, no structured FAQ, and little to no presence outside their own website. AI systems have no reason to recommend what they cannot clearly understand.</p>
+<p>The good news is that the fixes are practical and most of them cost nothing.</p>
+
+<h2>What AI Systems Are Actually Looking For</h2>
+<p>Before jumping into the steps, it helps to understand the four signals AI systems weight most when deciding who to recommend:</p>
+<ul>
+  <li><strong>Clarity about what you do and who you help.</strong> AI cannot recommend a business it cannot understand. If your website says "we offer comprehensive solutions for modern businesses," an AI skips you. If it says "we build lead-generating websites for HVAC and plumbing companies," an AI can match you to relevant queries.</li>
+  <li><strong>Third-party mentions and reviews.</strong> AI systems trust what other sources say about your business more than what you say about yourself. Google reviews, directory listings, mentions in blog posts, and forum recommendations all signal that real people have had a real experience with you.</li>
+  <li><strong>Structured FAQ and Q&A content.</strong> AI assistants are built to answer questions. Businesses that have clearly written answers to the questions their customers ask are far more likely to be surfaced in AI responses. This is called Answer Engine Optimization (AEO).</li>
+  <li><strong>Consistent information across the web.</strong> If your business name, website, and description appear the same way across Google Business Profile, Yelp, LinkedIn, industry directories, and your own site, AI systems develop higher confidence in you. Inconsistency — or absence from these sources — lowers your credibility score.</li>
+</ul>
+
+<h2>The DIY Fix — Step by Step</h2>
+<p>Here is exactly how to improve your chances of appearing in AI recommendations. These steps are in order of impact.</p>
+<ol>
+  <li>
+    <strong>Rewrite your homepage headline to state exactly what you do.</strong><br/>
+    Your homepage headline is often the first — and sometimes the only — thing an AI reads about your business. Replace vague phrases with a plain one-sentence description. Instead of "Welcome to Smith Services," write "We build lead-generating websites for small businesses worldwide." Instead of "Your local HVAC experts," write "Emergency HVAC repair and installation for homeowners and businesses." The more specific, the better. AI systems reward clarity.
+  </li>
+  <li>
+    <strong>Add a dedicated FAQ page or FAQ section to your website.</strong><br/>
+    Write out the 10 to 15 questions your potential customers actually ask — and answer each one in plain conversational language. These should be the real questions: "How long does it take to build a website?" "Do you offer payment plans?" "What happens if something breaks after the project is done?" When AI assistants search the web for answers to questions, they pull from pages that already have those answers written clearly. A FAQ page is direct AEO — it speaks the exact language AI systems use.
+  </li>
+  <li>
+    <strong>Mark up your FAQ with schema markup.</strong><br/>
+    Schema markup is a piece of code you add to your website that tells search engines and AI systems what type of content a page contains. For FAQ pages, you use FAQPage schema — it looks like this in your HTML head: <code>&lt;script type="application/ld+json"&gt;{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Your question here?","acceptedAnswer":{"@type":"Answer","text":"Your answer here."}}]}&lt;/script&gt;</code>. You can generate this code for free at Schema.org or Google's Structured Data Markup Helper — paste your questions and answers in, copy the output, and paste it into your page's HTML. This is one of the highest-impact AEO changes you can make.
+  </li>
+  <li>
+    <strong>Claim and fully complete your Google Business Profile.</strong><br/>
+    Google AI Overviews and other AI tools pull heavily from Google Business Profile when recommending local businesses. If your profile is unclaimed, incomplete, or has outdated information, you are invisible to any AI doing a location-aware search. Go to business.google.com, claim or create your profile, fill in every section — especially your business description, service list, and hours — and upload at least 10 photos. Respond to all your reviews. An active, complete profile is one of the strongest AEO signals available for free.
+  </li>
+  <li>
+    <strong>Get listed in at least five reputable business directories.</strong><br/>
+    AI systems count third-party mentions as credibility signals. Every directory listing that confirms your business name, website, and what you do adds to the picture. Free directories worth targeting: Google Business Profile (already covered), Yelp, Bing Places for Business, Apple Maps (via Apple Business Connect), and one industry-specific directory relevant to your sector. Make sure your business name, phone number, and website URL are identical across all of them. Inconsistency between listings confuses AI systems and weakens your signal.
+  </li>
+  <li>
+    <strong>Publish at least one blog post per month that answers real customer questions.</strong><br/>
+    AI systems trained on web content have absorbed millions of articles. Businesses that publish clear, helpful, specific content are far more represented in that training data than businesses that never write anything. A blog post that answers "how much does a website cost for a small business" or "what is AI automation and how does it help my company" creates a connection between your business and that topic in AI systems' understanding. One genuine, helpful post per month is enough to build meaningful presence over six to twelve months.
+  </li>
+  <li>
+    <strong>Add LocalBusiness or Organization schema to your homepage.</strong><br/>
+    In addition to FAQ schema, adding structured data to your homepage that identifies your business name, type, website, and description gives AI systems machine-readable confirmation of your identity. Use Google's Structured Data Markup Helper to generate this code for free, then paste it into your homepage's HTML. It takes about 15 minutes and directly improves how AI systems understand what your business is.
+  </li>
+  <li>
+    <strong>Build mentions on external sites through guest posts or partnerships.</strong><br/>
+    When other websites — blogs, local news, industry publications, partner businesses — mention your business by name and link to your site, AI systems treat this as a vote of credibility. Reach out to three or four complementary businesses in adjacent fields and propose a genuine exchange: you mention them in a relevant blog post, they mention you in theirs. These third-party endorsements are among the strongest signals you can build without paying for advertising.
+  </li>
+</ol>
+
+<h2>What Tools You Need</h2>
+<p>Most of what is above can be done with free tools.</p>
+<ul>
+  <li><strong>Google Business Profile (free):</strong> business.google.com — the single highest-value AEO action for businesses that serve a local area.</li>
+  <li><strong>Google's Structured Data Markup Helper (free):</strong> Available through Google Search Central — generates schema markup code without requiring any coding knowledge.</li>
+  <li><strong>Schema.org (free):</strong> The reference site for all schema types. Useful if you want to add more advanced markup beyond FAQ and LocalBusiness.</li>
+  <li><strong>Google Search Console (free):</strong> Lets you see which queries bring people to your site and test your structured data. Essential for tracking whether your changes are working.</li>
+  <li><strong>Bing Webmaster Tools (free):</strong> Similar to Search Console but for Bing — important because some AI assistants draw data from Bing's index.</li>
+  <li><strong>Your website CMS:</strong> WordPress, Squarespace, Webflow, or whatever you use. You need to be able to edit your homepage headline and add HTML or code blocks. If you cannot do this yourself, this is a strong signal that your site needs professional attention.</li>
+</ul>
+
+<h2>Common Mistakes to Avoid</h2>
+<ul>
+  <li><strong>Writing FAQ content for search engines instead of people.</strong> If your FAQ answers sound robotic or are stuffed with keywords, AI systems are good at recognizing this. Write the way a helpful person would explain something over the phone — clear, direct, no jargon.</li>
+  <li><strong>Inconsistent business information across listings.</strong> If your Google Business Profile says "Smith Web Services" and your LinkedIn says "Smith Website Services" and your Yelp page was set up with an old phone number, AI systems see a fractured picture. Audit all your listings and make them match exactly.</li>
+  <li><strong>Publishing thin content that does not actually help anyone.</strong> A 200-word blog post with no real information does not build credibility. AI systems can evaluate content quality reasonably well. Write posts that fully answer the question in the title, with enough detail that someone could actually act on the advice.</li>
+  <li><strong>Skipping schema markup because it sounds technical.</strong> The structured data tools are free and genuinely beginner-friendly. Skipping them means AI systems are guessing at what your business is instead of reading clear machine-readable information you provided. It takes less than 30 minutes to add the basics.</li>
+  <li><strong>Focusing only on ChatGPT and ignoring other AI systems.</strong> Perplexity, Google AI Overviews, Claude, Microsoft Copilot, and Apple's AI features all pull from different combinations of web content, directories, and structured data. The steps above improve your visibility across all of them because they all look for the same underlying signals.</li>
+</ul>
+
+<h2>When to Hire a Professional Instead of DIY</h2>
+<p>The DIY steps above are achievable for anyone who can edit their own website. However, there are situations where professional help makes the difference between partial improvement and sustained AI visibility.</p>
+<p>If your website is built on a platform that does not allow you to add custom code or schema markup, you cannot complete the most impactful steps without rebuilding the site. If you have multiple services or locations that each need separate structured data, the complexity multiplies quickly. If you are in a competitive industry where other businesses are already executing AEO well, you need a comprehensive strategy rather than one-off fixes.</p>
+<p>TBS Tech Services builds websites specifically structured for AI visibility — with schema markup, FAQ architecture, and content frameworks built in from the start. We also help existing business owners audit and fix their current sites. Use our <a href="/calculator">free Business Leak Calculator</a> to see how much invisible-to-AI presence might be costing your business each month. Then <a href="/#contact">book a free demo</a> and we will show you exactly what the gap looks like for your specific situation.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Why does ChatGPT recommend some businesses but not others?</h3>
+<p>ChatGPT and similar AI assistants recommend businesses they have enough clear, consistent information about to feel confident making a recommendation. If your business has a vague website, few or no reviews, and little presence beyond your own domain, AI systems simply do not have enough signal to include you. Businesses that appear in multiple credible places — Google Business Profile, directories, news mentions, review platforms — with clear descriptions of what they do are the ones AI systems recommend. It is not about paying for placement. It is about giving AI systems the information they need to understand and trust your business.</p>
+
+<h3>What is Answer Engine Optimization (AEO) and how is it different from SEO?</h3>
+<p>Traditional SEO (Search Engine Optimization) is about getting your website to rank in a list of search results that a person then clicks through. AEO (Answer Engine Optimization) is about getting your business mentioned directly in the answer an AI gives — without the user having to click anything. The techniques overlap significantly: both benefit from clear content, structured data, and credible third-party mentions. The main difference is that AEO puts extra emphasis on question-and-answer content, FAQ schema markup, and conversational language — because AI assistants are built to answer questions, not just list links.</p>
+
+<h3>How long does it take to start appearing in ChatGPT recommendations?</h3>
+<p>For AI tools with live web access like Perplexity or Google AI Overviews, changes to your website and listings can start to make a difference within a few weeks as those tools re-index your content. For ChatGPT's base model (which does not browse the web by default), visibility comes from the training data and updates more slowly — typically over months as new training cycles incorporate updated web content. Completing your Google Business Profile and getting directory listings in order tends to produce the fastest visible results because AI tools with web access prioritize those authoritative sources.</p>
+
+<h3>Does having more Google reviews help you get recommended by AI?</h3>
+<p>Yes, significantly. Google reviews are one of the most credible third-party signals available for local businesses. AI tools that pull from Google's data — especially Google AI Overviews — treat a high volume of positive, recent reviews as a strong trust indicator. Beyond Google, reviews on Yelp, Facebook, and industry-specific platforms also add to the overall picture of credibility that AI systems assess. More importantly, responding to your reviews regularly signals that the business is active and engaged — another positive signal.</p>
+
+<h3>Is there a way to check whether your business appears in AI recommendations?</h3>
+<p>The most direct method is to simply test it. Open ChatGPT, Perplexity, and Google with AI Overviews enabled. Search for your type of business with the kind of language your customers would use — "best [your service] for [your customer type]" — and see what comes up. Also search for the specific problems you solve: "who can help me automate my small business," "which agency builds websites that generate leads." If competitors appear consistently and you do not, that gap is your baseline. Run the same test again after implementing the steps in this article to measure progress.</p>
     `,
   },
 ]

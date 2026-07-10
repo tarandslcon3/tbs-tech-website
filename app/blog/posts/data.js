@@ -1,5 +1,145 @@
 export const posts = [
   {
+    slug: 'free-online-booking-system',
+    title: 'How to Set Up a Free Online Booking System for Your Business (Step-by-Step)',
+    metaTitle: 'How to Set Up a Free Online Booking System | TBS Tech Services',
+    metaDescription: 'Let customers book appointments with you automatically, 24 hours a day, for free. Step-by-step guide for any business worldwide — no budget, no tech skills needed.',
+    date: '2026-07-09',
+    readTime: '7 min read',
+    featuredColor: '#1d4ed8',
+    excerpt: 'If customers still have to call or email you just to book an appointment, you are losing business every day. Here is how to fix it for free in about 30 minutes.',
+    content: `
+    <p>If customers still have to call you, text you, or send an email just to book an appointment — you are losing business every single day.</p>
+
+    <p>People book things at 11pm on their phone. They do not want to wait until morning to hear back. If the option is not there, they move on to the next business on the list and you never even know they were looking.</p>
+
+    <p>The good news is you can fix this today, for free, in about 30 minutes. This guide walks you through exactly how to set up an online booking system — whether you are a consultant in India, a plumber in Texas, a salon owner in the UK, or a trades business in Canada or Australia.</p>
+
+    <p>No budget needed. No technical skills needed. Just follow the steps.</p>
+
+    <h2>What a Free Booking System Actually Does</h2>
+
+    <p>A free booking system gives your customers a link they can click to pick a date and time that works for them. Once they choose a slot, the appointment lands on your calendar automatically and both of you get a confirmation email — without you lifting a finger.</p>
+
+    <p>Here is what a basic free setup does:</p>
+
+    <ul>
+      <li>Lets customers choose their own appointment time without calling you</li>
+      <li>Checks your existing calendar so you never get double-booked</li>
+      <li>Sends automatic confirmation emails to both sides</li>
+      <li>Syncs with your phone or computer calendar in real time</li>
+      <li>Handles time zones automatically for customers in different countries</li>
+      <li>Works on any phone, tablet, or computer — no app download required</li>
+    </ul>
+
+    <p>No complex software. No monthly fees. Just a cleaner way to run your schedule.</p>
+
+    <h2>The Best Free Booking Tools That Actually Stay Free</h2>
+
+    <p>Some tools call themselves free but cut you off after a trial or after a certain number of bookings. The three below have genuine free plans you can stay on permanently.</p>
+
+    <h3>Calendly</h3>
+    <p>The most widely used booking tool in the world. The free plan gives you one event type with unlimited bookings, connects to your calendar, and gives you a shareable link your customers can use to book from anywhere. It works in every country and handles time zones automatically. Customers do not need to create an account or download anything to book with you.</p>
+
+    <h3>Square Appointments</h3>
+    <p>Built specifically for service businesses. The free plan is designed for individual users — one person running the business. It comes with its own online booking page, handles automatic appointment reminders, and connects to payment collection when you are ready for that step. Available in the USA, Canada, Australia, UK, and Japan.</p>
+
+    <h3>Setmore</h3>
+    <p>A strong option if you have a small team. The free plan supports up to four staff members, each with their own available hours. Customers get a full booking page, automatic email reminders go out on their own, and it connects directly to Facebook and Instagram so people can book from your social media profiles without ever leaving the app.</p>
+
+    <p>For most people starting out, Calendly is the easiest first step. The walkthrough below covers the full setup.</p>
+
+    <h2>Step-by-Step: Set Up Calendly Free in 30 Minutes</h2>
+
+    <h3>Step 1 — Create your account</h3>
+    <p>Go to calendly.com and click Sign Up. You can register with your Google account or with an email and password. If you already have Gmail, signing in with Google is the fastest option — it also makes the next step easier.</p>
+
+    <h3>Step 2 — Enter your time zone</h3>
+    <p>When you first log in, Calendly asks for your name, business name, and time zone. Set your own location here. If you serve customers in other countries, do not worry — Calendly will automatically convert your available times to each customer's local time zone when they go to book. You set your hours once and it handles the rest.</p>
+
+    <h3>Step 3 — Connect your calendar</h3>
+    <p>This is the most important step in the whole setup. Connect whichever calendar you actually use day to day — Google Calendar, Outlook, Apple Calendar, or Office 365. Once connected, Calendly reads your calendar before showing available times to anyone. If you have a meeting already at 2pm on Tuesday, that slot disappears from your booking page automatically. No double bookings, no overlap.</p>
+
+    <p>If you do not currently use a digital calendar at all, set up a free Google Calendar first. It takes about five minutes and it is worth doing properly.</p>
+
+    <h3>Step 4 — Set your available hours</h3>
+    <p>Tell Calendly which days and what hours you are open for appointments. For example — Monday to Friday, 9am to 5pm. You can block out your lunch break, specific days off, holidays, or any future date you already know you will be away. Keep this realistic. If you set hours you cannot actually commit to, you will end up cancelling bookings and that creates a bad impression fast.</p>
+
+    <h3>Step 5 — Create your event type</h3>
+    <p>On the free plan you get one event type. Click the default event Calendly sets up and rename it to match what your customers are actually booking. Some good examples:</p>
+
+    <ul>
+      <li>Free 15-Minute Discovery Call</li>
+      <li>Roof Inspection Request</li>
+      <li>Initial Consultation — 30 Minutes</li>
+      <li>Haircut Appointment</li>
+      <li>Project Estimate Call</li>
+    </ul>
+
+    <p>Set the meeting length. Then write a short plain-English description so customers know exactly what to expect when they show up. Honest and specific beats vague every single time.</p>
+
+    <h3>Step 6 — Copy your booking link</h3>
+    <p>Once your event is saved, Calendly gives you a unique link — something like calendly.com/yourbusinessname/event-name. This is your booking page. Anyone anywhere in the world can click it, pick a time that works for them, enter their name and email, and confirm the appointment in under two minutes. No account. No download. Just a link.</p>
+
+    <h3>Step 7 — Put your link where people can actually find it</h3>
+    <p>This is where most people go wrong. They do the setup, get the link, share it once, and wonder why no one is using it. Your booking link needs to be visible everywhere. Add it to:</p>
+
+    <ul>
+      <li>Your email signature — every email you send becomes a booking opportunity</li>
+      <li>Your website — as a clear button that says Book a Free Call or Schedule a Visit</li>
+      <li>Your Google Business Profile — there is a dedicated appointments link field in your profile settings</li>
+      <li>Your Instagram and Facebook bio</li>
+      <li>Your WhatsApp Business profile description</li>
+      <li>Every proposal, quote, or estimate you send to a prospect</li>
+    </ul>
+
+    <p>If someone has to search for how to book with you, most of them will not bother. Make it impossible to miss.</p>
+
+    <h2>Small Things That Make a Real Difference</h2>
+
+    <p><strong>Test it yourself before sharing it.</strong> Once setup is done, book yourself a fake appointment and go through the whole experience as a customer. Check that the confirmation email arrives. Make sure the time slots look right and the description is clear. You will often catch something small that needs fixing.</p>
+
+    <p><strong>Add a buffer between appointments.</strong> If each booking is 30 minutes but you need 10 minutes to wrap up and prepare for the next one, set a buffer period in your event settings. Calendly adds it automatically so no one can book back to back with no breathing room.</p>
+
+    <p><strong>Write your event description like a real person.</strong> Skip the formal corporate language. Something like — "We will spend 15 minutes talking through your situation. No pressure and no sales pitch. Just honest advice on what would actually help." That kind of description converts far better than a generic placeholder.</p>
+
+    <p><strong>Keep your calendar updated in real time.</strong> The moment something comes up — a personal errand, a day off, a family commitment — add it to your calendar right away. Calendly reads your calendar live, so as long as your calendar is accurate, your booking page will always reflect your real availability.</p>
+
+    <h2>Is the Free Plan Enough for a Real Business?</h2>
+
+    <p>Yes. Calendly's free plan does not cap the number of bookings you can take. You could book 10 appointments a week or 100 — the free plan handles both without any upgrade required.</p>
+
+    <p>The main reasons to move to a paid plan down the road are: collecting payment at the time of booking, running more than one type of event, team scheduling across multiple people, or removing Calendly branding from confirmation emails. Until you hit one of those specific needs, the free plan is completely sufficient.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Will this work for my country?</h3>
+    <p>Yes. Calendly and Setmore both work globally. Calendly converts your availability to each customer's local time zone automatically, which means a customer booking from Australia while you are based in Canada will see the correct local times on both ends without you doing anything.</p>
+
+    <h3>Do my customers need to sign up or download anything?</h3>
+    <p>No. Customers click your link, pick a time, type in their name and email, and they are booked. No account, no app, no friction. Works on any device with a browser.</p>
+
+    <h3>What if I do not have a website?</h3>
+    <p>You do not need one. Your Calendly link works as a standalone booking page on its own. You can share it by text, email, WhatsApp, or through your social media bio. Many businesses run entirely on a booking link without any website at all.</p>
+
+    <h3>Can I manage bookings from my phone?</h3>
+    <p>Yes. Calendly has a free app for iOS and Android. You get a notification every time someone books, and you can view and manage your upcoming appointments directly from the app.</p>
+
+    <h3>What happens if I need to cancel or reschedule?</h3>
+    <p>Every confirmation email Calendly sends — to you and to your customer — includes a link to cancel or reschedule. Either side can use it and the other person gets notified automatically. No awkward phone calls needed.</p>
+
+    <h3>I tried this before and no one booked. Why?</h3>
+    <p>Almost always the same reason — the link was not visible enough. If people cannot find it, they will not use it. The fix is making sure your booking link is in your email signature, on your website, in your Google Business Profile, and in your social media bio. All four places, not just one.</p>
+
+    <h3>Is my customer's information kept private?</h3>
+    <p>Yes. The name and email your customers enter when they book are stored in your Calendly account only and are not shared with third parties or sold. You can review Calendly's full privacy policy on their website for the complete details.</p>
+
+    <p>Setting up a free booking system is one of those things that takes one afternoon and saves you hours every single week going forward. Do it once, put the link everywhere, and let the calendar fill itself.</p>
+
+    <p>If you want help building a website that makes booking and converting visitors as smooth as possible — that is exactly what <strong>TBS Tech Services</strong> does.</p>
+  `,
+  },
+  {
     slug: 'how-to-set-up-google-business-profile-2026',
     title: 'How to Set Up Google Business Profile in 2026 — Step by Step',
     metaTitle: 'How to Set Up Google Business Profile 2026',

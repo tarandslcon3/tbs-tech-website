@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -39,6 +40,18 @@ export default function BlogPostClient({ post, otherPosts }) {
               <p className="text-gray-300 text-lg leading-relaxed border-l-2 border-[#3b82f6] pl-5">
                 {post.excerpt}
               </p>
+              {post.image && (
+                <div className="mt-8 rounded-xl overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={1200}
+                    height={630}
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
+              )}
             </header>
 
             <div

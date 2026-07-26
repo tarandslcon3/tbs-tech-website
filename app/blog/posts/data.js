@@ -1,5 +1,276 @@
 export const posts = [
   {
+    slug: 'toronto-property-tax-2026-nobody-accountable',
+    title: 'Toronto Taxes Your Condo on a 2016 Price, Wrongly Billed 167,000 Homeowners, and Nobody Lost Their Job',
+    metaTitle: 'Toronto Property Tax 2026: The Problems Nobody Is Accountable For | TBS Tech Services',
+    metaDescription: 'Toronto condo values fell four years straight while tax bills rose. Frozen 2016 assessments, 167,000 wrongly issued tax bills, a 32 billion dollar reserve gap and no consequences. Every figure sourced.',
+    date: '2026-07-25',
+    readTime: '14 min read',
+    featuredColor: '#b91c1c',
+    excerpt: 'The City sent tax bills to 167,000 homeowners it should not have. It reversed 108,000 of them, apologised, and raised your rate anyway. In a private company, someone would have been fired. Here is the full list of what is broken.',
+    content: `
+<p>In 2024, the City of Toronto sent vacant home tax bills to roughly 167,000 property owners. Bills ranging from a few thousand dollars to more than $15,000 each. Around 108,000 of those charges were later reversed. City staff eventually estimated that about 48,000 of the properties still flagged as vacant were, in fact, lived in.</p>
+
+<p>The Mayor apologised. Late fees were waived. The program was rebuilt.</p>
+
+<p>Nobody lost their job. No refund of the interest people paid on lines of credit they drew down to cover a bill they did not owe. No compensation for the days off work spent lining up at civic centres. And the following year, the tax rate went up again.</p>
+
+<p>If a bank had wrongly debited 167,000 customers, there would be a class action, a regulatory investigation, and executives in front of a parliamentary committee. When the City does it, there is a press conference and a promise to do better.</p>
+
+<p>That asymmetry is the subject of this article. Not one bad program — the structure underneath it, and what it is costing you as a Toronto property owner right now.</p>
+
+<p>Every number below comes from a public document. Links to all of them are at the bottom.</p>
+
+<h2>Start With a Real Bill</h2>
+
+<p>Here is a 2026 Toronto property tax bill for a one-bedroom condo in Yorkville:</p>
+
+<ul>
+  <li><strong>City:</strong> rate 0.605295 percent — $3,734.67</li>
+  <li><strong>Education (Province of Ontario):</strong> rate 0.153000 percent — $944.01</li>
+  <li><strong>City Building Fund:</strong> rate 0.009016 percent — $55.63</li>
+  <li><strong>Total:</strong> combined rate 0.767311 percent — $4,734.31</li>
+</ul>
+
+<p>Assessed value: $617,000. Prior year bill on the same unit: $4,677.01.</p>
+
+<p>The bill went up. The condo went down. Here is why that is not a mistake.</p>
+
+<h2>Problem 1: You Are Being Taxed on a Price From 2016</h2>
+
+<p>Straight from <a href="https://www.mpac.ca/en/UnderstandingYourAssessment/AssessmentCycle" target="_blank" rel="noopener">MPAC's own website</a>:</p>
+
+<p><strong>"Property assessments for the 2026 property tax year will continue to be based on fully phased-in January 1, 2016 current values."</strong></p>
+
+<p>The number the City multiplies to calculate your bill is what a provincial agency thought your property was worth on January 1, 2016. Not today. Not last year. A decade ago.</p>
+
+<p>Ontario's system was designed to reassess every four years. The last province-wide update was 2016. The next was due in 2020, got postponed for COVID, and has been postponed by fresh regulation every single year since — with the province filing a regulation on August 16, 2023 to formally extend the freeze, as <a href="https://www.millerthomson.com/en/insights/real-estate/reassessment-ontario-properties-delayed-taxpayers-rights-challenge-assessments/" target="_blank" rel="noopener">Miller Thomson documented</a>.</p>
+
+<p>We are in year eleven of a four-year cycle. There is no announced end date.</p>
+
+<p>So when your condo drops ten percent, your assessment does not move. It is welded to a snapshot that gets further from reality every twelve months. As <a href="https://renx.ca/ontarios-property-tax-system-is-long-past-its-expiry-date" target="_blank" rel="noopener">Real Estate News Exchange put it</a>, absent regular reassessments, inequities of assessment and taxation abound — and the delay has compromised a system that was otherwise soundly built.</p>
+
+<p>To be precise about blame, because this matters: <strong>the freeze is a provincial decision, not a City of Toronto one.</strong> Queen's Park froze the assessment. The City sets the rate. Both are part of the problem, but they are different problems with different addresses.</p>
+
+<h2>Problem 2: The Rate Goes Up Regardless of What Your Property Is Worth</h2>
+
+<p>Your bill has two moving parts. Only one is frozen.</p>
+
+<p><strong>Assessment x Rate = Your Bill</strong></p>
+
+<p>Council sets the rate each year to raise whatever the budget needs. Budget goes up, assessment base does not, rate goes up. That is the whole mechanism, and your property's actual value never enters into it.</p>
+
+<p>Recent Toronto residential increases, per <a href="https://www.cbc.ca/news/canada/toronto/council-debate-budget-2026-9.7081563" target="_blank" rel="noopener">CBC News</a>:</p>
+
+<ul>
+  <li>2024 — 9.5 percent</li>
+  <li>2025 — 6.9 percent</li>
+  <li>2026 — 2.2 percent</li>
+</ul>
+
+<p>Roughly twenty percent compounded in three years, applied to a 2016 valuation, while the condo market went the other way.</p>
+
+<h2>Problem 3: Condo Owners Are Quietly Subsidising Everybody Else</h2>
+
+<p>This is the one almost nobody has written about, and it is the most expensive.</p>
+
+<p>Property tax is a share system. You are not paying a fee for services. You are paying your slice of the City's total levy, and your slice is determined by your property's value relative to every other property.</p>
+
+<p>Freeze that comparison for eleven years and the slices stop reflecting reality.</p>
+
+<p>MPAC's own figures, <a href="https://www.cbc.ca/news/canada/ottawa/ontario-property-assessments-have-been-paused-for-years-and-who-knows-when-they-ll-resume-1.7306914" target="_blank" rel="noopener">reported by CBC</a>, show residential property across Ontario rose 94 percent in the eight years to 2024. Toronto condos have badly underperformed that. <a href="https://public.trreb.ca/market-data/condo-market-report" target="_blank" rel="noopener">TRREB data</a> shows the segment declining for four consecutive years, with first-quarter 2026 benchmark prices down about ten percent year over year. Detached houses have not fallen anything like that.</p>
+
+<p>The arithmetic is unavoidable. <strong>Condo owners are almost certainly paying a bigger share of Toronto's levy than their current market value justifies. Detached homeowners are paying a smaller one.</strong> Every year the freeze continues, the gap widens — and no one at any level of government is publishing the numbers on how far it has drifted.</p>
+
+<h2>Problem 4: When the City Gets It Wrong, You Absorb the Cost</h2>
+
+<p>Back to the vacant home tax, because the detail matters.</p>
+
+<p>Per the <a href="https://www.toronto.ca/services-payments/property-taxes-utilities/vacant-home-tax/" target="_blank" rel="noopener">City of Toronto</a>, the tax is now three percent of assessed value annually. On a $617,000 assessment, that is $18,510 a year.</p>
+
+<p>In the 2023 tax year rollout, one in five Toronto homes missed the declaration deadline, triggering bills to roughly 167,000 owners. The City received more than 55,000 complaints in two days. Around 108,000 charges were reversed. Staff later reported that of the roughly 58,000 homes still deemed vacant, about 48,000 were believed to have actually been occupied.</p>
+
+<p>Now think about what that means in practice. A homeowner who did file on time, was billed anyway, and paid it to avoid penalties, was out thousands of dollars for months. A homeowner selling that spring found a tax lien issue on their title. A senior without internet access got a five-figure bill in the mail for living in their own home.</p>
+
+<p>The City's remedy was a complaints process and an apology.</p>
+
+<p><strong>There is no mechanism in Canadian municipal law for you to be compensated when a city bills you wrongly and you incur costs fixing it.</strong> That is not an accident of this one program. That is the design.</p>
+
+<h2>Problem 5: The Auditor General Keeps Finding Things, and the Findings Keep Repeating</h2>
+
+<p>Toronto has a genuinely capable Auditor General. That is not the problem. The problem is what she keeps finding and what happens afterwards. From her <a href="https://www.torontoauditor.ca/reports/" target="_blank" rel="noopener">published reports</a>:</p>
+
+<p><strong>Procurement.</strong> An audit of the PayIt platform found roughly $8.4 million in estimated total fees paid by the City or its customers, and noted that given the unusual nature of the proposal, better record retention should have supported key decisions. A follow-up investigation identified policy and by-law violations, with staff and former senior management describing pressure to proceed — though the Auditor General concluded these did not meet the threshold of wrongdoing under the Toronto Public Service By-law.</p>
+
+<p><strong>Waste collection.</strong> A 2026 audit found 7,045 missed pick-ups between January and June 2025, including 41 instances where entire streets were skipped. Forty-five percent of sampled consultant payments lacked the required inspection reports. The service provider failed to address the initial missed collection request in 43 percent of disputed cases.</p>
+
+<p><strong>Fraud and waste.</strong> The hotline received nearly 700 complaints in 2025, generating over 1,100 allegations. One case involved electricity accounts for 14 City properties being switched away from Toronto Hydro using a retired employee's credentials — exposure of roughly $2.5 million had it gone unnoticed. A forensic audit found a vendor had intentionally overbilled the City by more than $1 million.</p>
+
+<p>Read that list again and ask a simple question: in which of these cases did the outcome change who runs the department?</p>
+
+<h2>Problem 6: The City Is Spending Money It Does Not Have, and Says So in Its Own Documents</h2>
+
+<p>Toronto's 2026 operating budget is $18.9 billion, per the <a href="https://www.toronto.ca/news/city-of-toronto-launches-2026-budget/" target="_blank" rel="noopener">City's budget launch release</a>. Roughly 19.1 percent of property taxes go to the TTC and 18.6 percent to the Toronto Police Service, according to <a href="https://www.socialplanningtoronto.org/2026_police_budget" target="_blank" rel="noopener">Social Planning Toronto</a>. Police received a $93.8 million increase to $1.43 billion, of which $50.7 million is a collective agreement salary increase, per the <a href="https://www.toronto.ca/legdocs/mmis/2026/bu/bgrd/backgroundfile-261506.pdf" target="_blank" rel="noopener">2026 Budget Notes</a>. The TTC received a comparable increase.</p>
+
+<p>Here is the number that should stop you cold.</p>
+
+<p>The City is drawing <strong>$1.7 billion from reserves</strong> in 2026 — up from $1.3 billion in 2025 and $1.1 billion in 2024, <a href="https://www.thetrillium.ca/municipalities-newsletter/chow-budget-property-tax-spending-ttc-police-passes-11877277" target="_blank" rel="noopener">as The Trillium reported</a> — including $323 million that budget documents describe as temporary bridging.</p>
+
+<p>And from the City's own 2026 budget outline, <a href="https://www.cbc.ca/news/canada/toronto/toronto-2026-budget-affordability-9.7038019" target="_blank" rel="noopener">reported by CBC</a>: <strong>over the next ten years, planned spending of reserves exceeds those funds' projected balances by more than $32 billion.</strong></p>
+
+<p>That is not an outside critic's estimate. That is the City describing its own plan.</p>
+
+<p>Meanwhile the state of good repair backlog — deferred maintenance on assets already owned — is projected to grow from $9.4 billion at the end of 2024 to <strong>$18.1 billion by 2034</strong>, per <a href="https://www.toronto.ca/legdocs/mmis/2025/bu/bgrd/backgroundfile-251986.pdf" target="_blank" rel="noopener">City budget documents</a>. About one third of Toronto's street lights are already past useful life, <a href="https://www.cbc.ca/news/canada/toronto/toronto-infrastructure-state-of-good-repair-backlog-9.7043926" target="_blank" rel="noopener">per the 2026 budget presentation</a>.</p>
+
+<p>Taxes up twenty percent in three years. Reserves being drained. Infrastructure backlog doubling. Councillor Brad Bradford's summary at the budget vote was that the Mayor is mortgaging Toronto's future for her re-election prospects in the fall.</p>
+
+<h2>Problem 7: Property Tax Is Only One Line</h2>
+
+<p>Stack everything a Toronto condo owner is carrying in 2026:</p>
+
+<p><strong>Municipal Land Transfer Tax.</strong> Toronto charges this on top of Ontario's provincial land transfer tax. No other Ontario city does. In its <a href="https://trreb.ca/hlfiles/pdf/TRREB-letter-to-Premier-Ford_MLTT_Increase.pdf" target="_blank" rel="noopener">letter to Premier Ford</a>, TRREB states buyers of an average-priced home pay more than $17,000 in MLTT alone, and that repeated increases combined with some of the highest development charges in Canada have made Toronto one of the most heavily taxed housing markets in North America. Rates above $3 million rose again on April 1, 2026, to a range of 4.4 to 8.6 percent.</p>
+
+<p><strong>Short-term rental restrictions.</strong> From the <a href="https://www.toronto.ca/community-people/housing-shelter/rental-housing-rights-information/short-term-rentals/short-term-rental-operators-hosts/" target="_blank" rel="noopener">City's own operator page</a>: $390 annual registration, principal residence only, entire-unit rentals capped at 180 nights per calendar year, 8.5 percent Municipal Accommodation Tax, mandatory annual inspections you must personally attend, and fines to $100,000 or $10,000 per day for continuing violations. Investment properties are excluded outright. So the City restricts what you can earn from your own property, charges you for permission to earn it, taxes the earnings, and inspects you annually to confirm compliance.</p>
+
+<p><strong>Condo fees.</strong> Rising roughly three to five percent annually across the GTA, with many Ontario corporations seeing insurance premiums jump 20 to 40 percent year over year in 2024. In new buildings, developers routinely underquote first-year budgets — owners often find actual fees landing 10 to 30 percent above the offering plan figure once the corporation takes over. There is no cap on special assessments under the Condominium Act.</p>
+
+<p><strong>And the investment case has collapsed.</strong> Research from CIBC and Urbanation found the majority of leveraged GTA condo investors are now cash-flow negative — rent no longer covers mortgage, fees and property tax combined. <a href="https://www.cmhc-schl.gc.ca/observer/2025/condominium-apartment-market-risks-toronto-vancouver" target="_blank" rel="noopener">CMHC found</a> Toronto pre-construction buyers who closed in 2024 faced capital losses of up to six percent, and that financing becomes harder when a unit loses value between purchase and closing.</p>
+
+<h2>The Accountability Gap: What Would Happen If a Private Company Did This</h2>
+
+<p>Run the comparison honestly, because this is the heart of it.</p>
+
+<p>A private company that billed 167,000 customers in error faces a class action, a regulator, and a share price. Customers leave. Revenue drops immediately and visibly. Executives are replaced because the board has a fiduciary duty and a very short patience horizon.</p>
+
+<p>A municipal government that does the same thing faces an apology, a process review, and an election up to four years away in which property tax administration will be one issue among thirty.</p>
+
+<p>The structural differences are worth naming plainly:</p>
+
+<ul>
+  <li><strong>You cannot leave.</strong> Dissatisfied bank customers switch banks. Dissatisfied property owners have to sell a home and move cities. That is not a market — it is a captive base, and captive bases do not generate the feedback that forces improvement.</li>
+  <li><strong>Revenue is guaranteed regardless of performance.</strong> The levy gets collected whether service quality goes up, down, or sideways. Missed garbage pickups do not reduce the bill. A doubling repair backlog does not reduce the bill.</li>
+  <li><strong>Failure has no personal cost.</strong> No individual at the City was worse off financially because of the vacant home tax rollout. The people who were worse off were the residents who paid bills they did not owe.</li>
+  <li><strong>The information is public but unusable.</strong> Every figure in this article was technically available to any Toronto resident. It sits across a dozen PDFs, three websites and several hundred pages of budget notes. Technically transparent and practically opaque are not the same thing, and the gap between them is where accountability goes to die.</li>
+</ul>
+
+<p>None of this requires anyone to have done anything criminal. That is precisely the point, and it is worse than the alternative. A corrupt system can be prosecuted. An unaccountable one just continues.</p>
+
+<h2>Now Compare It to the United States</h2>
+
+<p>Torontonians assume American cities are a tax nightmare. On the specific question of whether your assessment reflects your property, the opposite is true.</p>
+
+<h3>New York City reassesses every single year</h3>
+
+<p>New York is more expensive than Toronto. That is not in dispute. Manhattan's median sale price reached US $1,225,000 in the first quarter of 2026, up 5.2 percent year over year and the fifth straight quarterly gain, per the Douglas Elliman and Miller Samuel quarterly report. Manhattan's median rent hit an all-time record of US $5,099 in April 2026, according to <a href="https://inhabit.corcoran.com/nyc-residential-rental-market-report-april-2026/" target="_blank" rel="noopener">Corcoran</a>. Toronto's average one-bedroom condo rent, by contrast, was $2,246 in the first quarter of 2026 — <strong>down</strong> 4.1 percent year over year, per the <a href="https://trreb.ca/market-data/rental-market-report/" target="_blank" rel="noopener">TRREB Rental Market Report</a>.</p>
+
+<p>Higher prices. Higher rents. Rising values. And in January 2026, the NYC Department of Finance published its <a href="https://www.nyc.gov/site/finance/about/press/press-release-fy27-tentative-assessment-roll.page" target="_blank" rel="noopener">tentative assessment roll</a> for the coming fiscal year — Class 2, covering condos and co-ops, showed total market value up 6.9 percent to $422.4 billion, with condominiums up 4.0 percent and Brooklyn leading at 11.8 percent.</p>
+
+<p>Every year. Values up, values down, the roll refreshes, the bill tracks reality.</p>
+
+<p>The effective rates are broadly comparable — Toronto residential sits at 0.767 percent, while NYC Class 2 condos, despite a headline rate above 12 percent, produce an effective rate often near one percent of true market value because of how the assessment ratio works. Primary residents also get a Co-op and Condo Abatement worth 17.5 to 28.1 percent.</p>
+
+<p><strong>The difference is not how much they charge. It is whether the number they charge it on is real.</strong> New York taxes a rising market on this year's values. Toronto taxes a falling market on 2016's.</p>
+
+<p>In fairness, New York City also levies a municipal income tax that Toronto does not, so total burden is not a clean comparison. But on assessment integrity, it is not close.</p>
+
+<h3>And the capital is voting with its feet</h3>
+
+<p>This is where the property tax story connects to something much larger, and the numbers are grim.</p>
+
+<ul>
+  <li>Canada fell from 83.1 percent of US GDP per capita in 2014 to just <strong>71.4 percent in 2024</strong>, <a href="https://thehub.ca/2026/03/20/why-canadas-gdp-per-capita-crisis-is-real-deepdive/" target="_blank" rel="noopener">according to analysis in The Hub</a>. Canada fell below the OECD average for the first time in recorded history.</li>
+  <li>Inflation-adjusted business investment per Canadian worker <strong>fell 18.8 percent</strong> from $20,310 in 2014 to $16,493 in 2024. The American equivalent <strong>rose 31.3 percent</strong>, from $23,263 to $30,555, <a href="https://www.theepochtimes.com/world/widening-divide-canada-lagging-behind-us-on-per-capita-business-investment-report-finds-6064484" target="_blank" rel="noopener">per a Fraser Institute study</a>.</li>
+  <li><a href="https://cdhowe.org/publication/canadas-investment-crisis-shrinking-capital-undermines-competitiveness-and-wages/" target="_blank" rel="noopener">The C.D. Howe Institute</a> projects that in 2025 Canadian workers will receive just <strong>55 cents of new capital for every dollar</strong> received by US workers.</li>
+  <li>Statistics Canada found the Canada-US productivity gap has <strong>widened by 26 percent since 2000</strong>, <a href="https://thehub.ca/2026/03/30/canadas-productivity-gap-with-u-s-has-widened-by-26-percent-since-2000-statistics-canada-report/" target="_blank" rel="noopener">as reported in March 2026</a>.</li>
+  <li><a href="https://www.mckinsey.com/ca/overview/addressing-canadas-productivity-gap-a-journey-towards-global-leadership" target="_blank" rel="noopener">McKinsey</a> notes real GDP per capita fell 1.3 percent in 2023 and 1.4 percent in 2024, leaving Canada near the bottom of the G7 on a per-person basis.</li>
+</ul>
+
+<p>None of that is caused by Toronto's property tax alone. But it is the environment Toronto's decisions are being made in — and a city that adds a land transfer tax no other Ontario municipality charges, caps what you can earn from your own property, freezes assessments for a decade and drains its reserves is not making that picture better.</p>
+
+<h2>What This Article Is Not Claiming</h2>
+
+<p>Three things, so nobody can wave the rest of it away.</p>
+
+<p>The 2026 budget was not hidden. It was debated publicly, voted publicly, and passed council unanimously. Every figure here came from a document you can open yourself.</p>
+
+<p>Toronto has genuinely acted on some housing costs. The City <a href="https://www.toronto.ca/news/city-of-toronto-secures-1-5-billion-in-canada-ontario-partnership-to-build-funding-to-support-housing-and-reduce-development-charges/" target="_blank" rel="noopener">secured $1.5 billion</a> to cut development charges 40 to 60 percent through 2029, froze DC indexing in 2025 and 2026, introduced a 15 percent tax reduction for new multi-residential buildings, kept a 15 percent reduction for over 28,000 small businesses, and froze TTC fares for a third year.</p>
+
+<p><strong>But look at who every one of those measures is for.</strong> New construction. New buyers. Developers. Not one of them reaches the person who already owns. Existing condo owners get the rate increase, the 2016 assessment, the 180-night cap, the 8.5 percent accommodation tax, the rising fees — and none of the relief. If you bought a Toronto condo between 2019 and 2022, the entire policy environment has been designed around someone who is not you.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Why did my Toronto property tax go up when my condo value went down?</h3>
+<p>Because your assessment is frozen at January 1, 2016 values and has nothing to do with today's market. Your bill rises when City Council raises the tax rate to fund the budget. Assessment and market value have been disconnected in Ontario since 2016.</p>
+
+<h3>What is my Toronto property tax actually based on?</h3>
+<p>Your MPAC assessed value as of January 1, 2016, multiplied by the combined 2026 residential rate of 0.767311 percent — comprising 0.605295 percent City, 0.153000 percent provincial education, and 0.009016 percent City Building Fund.</p>
+
+<h3>How much did Toronto property taxes increase in 2026?</h3>
+<p>2.2 percent in total — a 0.7 percent residential increase plus a 1.5 percent City Building Fund levy increase. That follows 6.9 percent in 2025 and 9.5 percent in 2024. On the City's stated average assessed home value of $692,140, the 2026 increase is roughly $91.53 per year.</p>
+
+<h3>When will Ontario reassess property values again?</h3>
+<p>No date has been set. The reassessment was originally scheduled for 2020 and has been postponed by regulation every year since. The 2026 tax year still uses January 1, 2016 values.</p>
+
+<h3>How many Toronto homeowners were wrongly billed under the vacant home tax?</h3>
+<p>Bills went to roughly 167,000 owners for the 2023 tax year. Approximately 108,000 charges were subsequently reversed. City staff estimated that around 48,000 of the properties still deemed vacant had actually been occupied. The City apologised and waived late fees.</p>
+
+<h3>Are Toronto property taxes higher than New York City's?</h3>
+<p>The effective rates are broadly comparable. Toronto residential sits at 0.767 percent, while NYC condos produce an effective rate often near one percent of market value. The meaningful difference is that New York reassesses annually while Toronto uses 2016 values. New York also levies a municipal income tax that Toronto does not.</p>
+
+<h3>Can I get compensation if the City bills me in error?</h3>
+<p>There is no general mechanism in Canadian municipal law to compensate property owners for costs incurred because of a municipal billing error. You can dispute the charge through the City's complaint and appeal process, but consequential costs such as interest, lost wages or professional fees are generally not recoverable.</p>
+
+<h3>How many nights can I rent my Toronto condo short-term?</h3>
+<p>A maximum of 180 nights per calendar year for an entire unit, and only if the property is your principal residence. Registration costs $390 annually and an 8.5 percent Municipal Accommodation Tax applies. Investment properties do not qualify at all.</p>
+
+<h2>Coming Next</h2>
+
+<p>This article is the diagnosis. The next one is the treatment — what a Toronto property owner can actually do about it: how the Request for Reconsideration process works and what evidence actually wins, the deadlines nobody publicises, how to check whether a supplementary assessment was quietly added to your unit, what to demand from candidates before the October 26, 2026 municipal election, and how to model your real carrying cost before the freeze eventually breaks.</p>
+
+<p>Subscribe or check back — it is published here.</p>
+
+<h2>Why a Tech Company Wrote This</h2>
+
+<p>We build websites, automation and AI tools for Canadian businesses. This article exists because we kept hitting the same wall with clients in real estate, property management and the trades: the data explaining their own costs is public, buried across city budget PDFs and assessment rolls, and functionally unreadable to a normal person.</p>
+
+<p>That is a solvable problem, and it is the same problem behind most of the work we do. The information exists. Nobody has made it usable for the person who actually needs it.</p>
+
+<p>If you are running a business in Toronto or anywhere in Canada and you need a website that actually generates leads instead of sitting there, workflows that stop eating your week, or an AI tool that answers your customers properly — <strong>fill in the contact form on this site and tell us what is broken.</strong> We will tell you honestly whether we can fix it, and we will tell you if we cannot.</p>
+
+<h2>Sources</h2>
+
+<ul>
+  <li><a href="https://www.mpac.ca/en/UnderstandingYourAssessment/AssessmentCycle" target="_blank" rel="noopener">MPAC — The Assessment Cycle</a></li>
+  <li><a href="https://www.toronto.ca/news/city-of-toronto-launches-2026-budget/" target="_blank" rel="noopener">City of Toronto — 2026 Budget launch</a></li>
+  <li><a href="https://www.toronto.ca/services-payments/property-taxes-utilities/property-tax/property-tax-rates-and-fees/" target="_blank" rel="noopener">City of Toronto — Property Tax Rates and Fees</a></li>
+  <li><a href="https://www.toronto.ca/services-payments/property-taxes-utilities/vacant-home-tax/" target="_blank" rel="noopener">City of Toronto — Vacant Home Tax</a></li>
+  <li><a href="https://www.toronto.ca/community-people/housing-shelter/rental-housing-rights-information/short-term-rentals/short-term-rental-operators-hosts/" target="_blank" rel="noopener">City of Toronto — Short-Term Rental Operators and Hosts</a></li>
+  <li><a href="https://www.torontoauditor.ca/reports/" target="_blank" rel="noopener">City of Toronto Auditor General — Reports</a></li>
+  <li><a href="https://www.cbc.ca/news/canada/toronto/council-debate-budget-2026-9.7081563" target="_blank" rel="noopener">CBC News — Toronto council approves 2026 budget</a></li>
+  <li><a href="https://www.cbc.ca/news/canada/toronto/toronto-2026-budget-affordability-9.7038019" target="_blank" rel="noopener">CBC News — Budget priorities and reserve reliance</a></li>
+  <li><a href="https://www.cbc.ca/news/canada/toronto/toronto-infrastructure-state-of-good-repair-backlog-9.7043926" target="_blank" rel="noopener">CBC News — Toronto infrastructure backlog</a></li>
+  <li><a href="https://www.cbc.ca/news/canada/ottawa/ontario-property-assessments-have-been-paused-for-years-and-who-knows-when-they-ll-resume-1.7306914" target="_blank" rel="noopener">CBC News — Ontario property assessments paused</a></li>
+  <li><a href="https://www.thetrillium.ca/municipalities-newsletter/chow-budget-property-tax-spending-ttc-police-passes-11877277" target="_blank" rel="noopener">The Trillium — 2026 budget passage and reserve draws</a></li>
+  <li><a href="https://trreb.ca/market-data/rental-market-report/" target="_blank" rel="noopener">TRREB — Rental Market Report</a></li>
+  <li><a href="https://public.trreb.ca/market-data/condo-market-report" target="_blank" rel="noopener">TRREB — Condo Market Report</a></li>
+  <li><a href="https://trreb.ca/hlfiles/pdf/TRREB-letter-to-Premier-Ford_MLTT_Increase.pdf" target="_blank" rel="noopener">TRREB — Letter to Premier Ford on the MLTT increase</a></li>
+  <li><a href="https://www.nyc.gov/site/finance/about/press/press-release-fy27-tentative-assessment-roll.page" target="_blank" rel="noopener">NYC Department of Finance — Tentative Assessment Roll</a></li>
+  <li><a href="https://inhabit.corcoran.com/nyc-residential-rental-market-report-april-2026/" target="_blank" rel="noopener">Corcoran — NYC Residential Rental Market Report, April 2026</a></li>
+  <li><a href="https://www.cmhc-schl.gc.ca/observer/2025/condominium-apartment-market-risks-toronto-vancouver" target="_blank" rel="noopener">CMHC — Condominium apartment market risks</a></li>
+  <li><a href="https://renx.ca/ontarios-property-tax-system-is-long-past-its-expiry-date" target="_blank" rel="noopener">RENX — Ontario's property tax system is past its expiry date</a></li>
+  <li><a href="https://www.millerthomson.com/en/insights/real-estate/reassessment-ontario-properties-delayed-taxpayers-rights-challenge-assessments/" target="_blank" rel="noopener">Miller Thomson — Reassessment of Ontario properties delayed</a></li>
+  <li><a href="https://www.socialplanningtoronto.org/2026_police_budget" target="_blank" rel="noopener">Social Planning Toronto — 2026 police budget analysis</a></li>
+  <li><a href="https://thehub.ca/2026/03/20/why-canadas-gdp-per-capita-crisis-is-real-deepdive/" target="_blank" rel="noopener">The Hub — Canada's GDP per capita crisis</a></li>
+  <li><a href="https://thehub.ca/2026/03/30/canadas-productivity-gap-with-u-s-has-widened-by-26-percent-since-2000-statistics-canada-report/" target="_blank" rel="noopener">The Hub — Statistics Canada on the widening productivity gap</a></li>
+  <li><a href="https://cdhowe.org/publication/canadas-investment-crisis-shrinking-capital-undermines-competitiveness-and-wages/" target="_blank" rel="noopener">C.D. Howe Institute — Canada's Investment Crisis</a></li>
+  <li><a href="https://www.theepochtimes.com/world/widening-divide-canada-lagging-behind-us-on-per-capita-business-investment-report-finds-6064484" target="_blank" rel="noopener">Fraser Institute study on business investment per worker</a></li>
+  <li><a href="https://www.mckinsey.com/ca/overview/addressing-canadas-productivity-gap-a-journey-towards-global-leadership" target="_blank" rel="noopener">McKinsey — Addressing Canada's productivity gap</a></li>
+</ul>
+
+<p><em>This article is for general information and is not tax, legal or investment advice. Verify your own assessment and bill directly with MPAC and the City of Toronto.</em></p>
+    `,
+  },
+  {
     slug: 'free-online-booking-system',
     title: 'How to Set Up a Free Online Booking System for Your Business (Step-by-Step)',
     metaTitle: 'How to Set Up a Free Online Booking System | TBS Tech Services',

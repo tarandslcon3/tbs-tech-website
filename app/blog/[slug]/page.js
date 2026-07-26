@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
       type: 'article',
       publishedTime: post.date,
       ...(post.image && {
-        images: [{ url: `${baseUrl}${post.image}`, width: 1200, height: 630 }],
+        images: [{ url: `${baseUrl}${post.image}`, width: 1200, height: 900 }],
       }),
     },
     twitter: {

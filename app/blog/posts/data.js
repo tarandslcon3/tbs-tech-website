@@ -7,7 +7,7 @@ export const posts = [
     date: '2026-07-25',
     readTime: '14 min read',
     featuredColor: '#b91c1c',
-    image: '/toronto-tax-og-1200x630.png',
+    image: '/toronto-tax-header.png',
     excerpt: 'The City sent tax bills to 167,000 homeowners it should not have. It reversed 108,000 of them, apologised, and raised your rate anyway. In a private company, someone would have been fired. Here is the full list of what is broken.',
     content: `
 <p>In 2024, the City of Toronto sent vacant home tax bills to roughly 167,000 property owners. Bills ranging from a few thousand dollars to more than $15,000 each. Around 108,000 of those charges were later reversed. City staff eventually estimated that about 48,000 of the properties still flagged as vacant were, in fact, lived in.</p>

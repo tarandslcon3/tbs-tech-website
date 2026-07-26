@@ -46,7 +46,7 @@ export default function BlogPostClient({ post, otherPosts }) {
                     src={post.image}
                     alt={post.title}
                     width={1200}
-                    height={630}
+                    height={900}
                     className="w-full h-auto"
                     priority
                   />
